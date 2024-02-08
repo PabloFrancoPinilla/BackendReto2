@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeatroBack.Models", "Models\TeatroBack.Models.csproj", "{11129002-8446-42C7-B983-9D0DDCD098EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeatroBack.API", "API\TeatroBack.API.csproj", "{B378D490-4FDF-49C3-B036-F3ACE72F86A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeatroBack.Data", "Data\TeatroBack.Data.csproj", "{9B3417D1-99D7-4E17-9101-EB31A74F4648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeatroBack.Business", "Business\TeatroBack.Business.csproj", "{4FA441F0-6800-4817-AB09-C0199B096ADF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11129002-8446-42C7-B983-9D0DDCD098EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11129002-8446-42C7-B983-9D0DDCD098EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11129002-8446-42C7-B983-9D0DDCD098EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11129002-8446-42C7-B983-9D0DDCD098EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B378D490-4FDF-49C3-B036-F3ACE72F86A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B378D490-4FDF-49C3-B036-F3ACE72F86A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B378D490-4FDF-49C3-B036-F3ACE72F86A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B378D490-4FDF-49C3-B036-F3ACE72F86A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3417D1-99D7-4E17-9101-EB31A74F4648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3417D1-99D7-4E17-9101-EB31A74F4648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3417D1-99D7-4E17-9101-EB31A74F4648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3417D1-99D7-4E17-9101-EB31A74F4648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA441F0-6800-4817-AB09-C0199B096ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA441F0-6800-4817-AB09-C0199B096ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA441F0-6800-4817-AB09-C0199B096ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA441F0-6800-4817-AB09-C0199B096ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
