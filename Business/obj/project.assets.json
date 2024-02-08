@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "TeatroBack.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "TeatroBack.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TeatroBack.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeatroBack.Data.dll": {}
+        }
+      },
+      "TeatroBack.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/TeatroBack.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeatroBack.Models.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TeatroBack.Data/1.0.0": {
+      "type": "project",
+      "path": "../Data/TeatroBack.Data.csproj",
+      "msbuildProject": "../Data/TeatroBack.Data.csproj"
+    },
+    "TeatroBack.Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/TeatroBack.Models.csproj",
+      "msbuildProject": "../Models/TeatroBack.Models.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "TeatroBack.Data >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\franc\\.nuget\\packages\\": {}
@@ -31,7 +68,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj": {
+              "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

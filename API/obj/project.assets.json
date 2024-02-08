@@ -107,6 +107,42 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "TeatroBack.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "TeatroBack.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TeatroBack.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeatroBack.Business.dll": {}
+        }
+      },
+      "TeatroBack.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "TeatroBack.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TeatroBack.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeatroBack.Data.dll": {}
+        }
+      },
+      "TeatroBack.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/TeatroBack.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TeatroBack.Models.dll": {}
+        }
       }
     }
   },
@@ -460,12 +496,28 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "TeatroBack.Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/TeatroBack.Business.csproj",
+      "msbuildProject": "../Business/TeatroBack.Business.csproj"
+    },
+    "TeatroBack.Data/1.0.0": {
+      "type": "project",
+      "path": "../Data/TeatroBack.Data.csproj",
+      "msbuildProject": "../Data/TeatroBack.Data.csproj"
+    },
+    "TeatroBack.Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/TeatroBack.Models.csproj",
+      "msbuildProject": "../Models/TeatroBack.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.AspNetCore.OpenApi >= 7.0.15",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "TeatroBack.Business >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -492,7 +544,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
+              "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
