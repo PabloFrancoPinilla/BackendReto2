@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj": {}
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj": {
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj",
         "projectName": "TeatroBack.API",
-        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
-                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj"
+              "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
+                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj",
         "projectName": "TeatroBack.Business",
-        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -96,8 +96,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj": {
-                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj"
+              "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\TeatroBack.Data.csproj": {
+                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\TeatroBack.Data.csproj"
               }
             }
           }
@@ -131,14 +131,14 @@
         }
       }
     },
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj": {
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\TeatroBack.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\TeatroBack.Data.csproj",
         "projectName": "TeatroBack.Data",
-        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\TeatroBack.Data.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\TeatroBack.Data.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Data\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -153,8 +153,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj": {
-                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj"
+              "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj": {
+                "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj"
               }
             }
           }
@@ -168,6 +168,22 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -188,14 +204,14 @@
         }
       }
     },
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj": {
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj",
         "projectName": "TeatroBack.Models",
-        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"

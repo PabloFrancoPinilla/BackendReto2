@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HlAELpT+w4vEoTn9jtFjk9pgZWE3Xck/EjjFPG7AXa7eEpp4Y7Ffn0wxQYDAYMxSY3aL6SYZBQTDYfDBpl03xw==",
+  "dgSpecHash": "C0vk870f2DfzUgpodZm0DF1lZudr6hwwoTRyVQu88lxfb9rTvvtiD6KTXxgCWj2/8KaT/GxP9U1jknLTExmH4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+  "projectFilePath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
