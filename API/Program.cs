@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("ServerDB");
-
+builder.Services.AddScoped<IObraService,ObraService>();
 // Register database context
 builder.Services.AddDbContext<ObraContext>(options =>
     options.UseSqlServer(connectionString));
