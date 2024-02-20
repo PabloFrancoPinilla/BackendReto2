@@ -18,6 +18,7 @@ namespace TeatroBack.Data
         public void Add(Obra obra)
         {
             _context.Obras.Add(obra);
+            SaveChanges();
         }
 
         public Obra? Get(int obraId)
@@ -28,6 +29,7 @@ namespace TeatroBack.Data
         public void Update(Obra obra)
         {
             _context.Entry(obra).State = EntityState.Modified;
+            SaveChanges();
         }
 
         public void Delete(int obraId)

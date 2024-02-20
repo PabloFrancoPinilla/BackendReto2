@@ -27,16 +27,23 @@ namespace TeatroBack.Data
               ); */
 
 
-            modelBuilder.Entity<Obra>()
-                .HasMany(obra => obra.Seats)
-                .WithOne(seat => seat.Obra)
-                .HasForeignKey(seat => seat.ObraId);
+          modelBuilder.Entity<Obra>()
+                .HasMany(o => o.Seats)
+                .WithOne(s => s.Obra)
+                .HasForeignKey(s => s.ObraId);
 
-
+            modelBuilder.Entity<Seat>()
+                .HasOne(s => s.User)
+                .WithMany(u => u.Seats)
+                .HasForeignKey(s => s.UserId);
+                
+               
         }
+        
 
         public DbSet<Obra> Obras { get; set; }
         public DbSet<Seat> Seats { get; set; }
+        public DbSet<User> Users { get; set; }
 
     }
 }
