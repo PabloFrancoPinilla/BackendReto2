@@ -61,7 +61,7 @@ namespace TeteObra.Controllers
 
             _ObraService.Delete(id);
 
-            return NoContent();
+            return Ok();
         }
 
 
