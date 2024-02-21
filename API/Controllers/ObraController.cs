@@ -24,9 +24,9 @@ namespace TeteObra.Controllers
             var Obra = _ObraService.Get(id);
 
             if (Obra == null)
-                return NotFound();
+                return NotFound("hehe que loco");
 
-            return Obra;
+            return Ok(Obra);
         }
 
         [HttpPost]

@@ -5,7 +5,7 @@
 namespace TeatroBack.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class PruebaUsers : Migration
+    public partial class PruebaSessions : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -42,24 +42,43 @@ namespace TeatroBack.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sessions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ObraId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sessions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sessions_Obras_ObraId",
+                        column: x => x.ObraId,
+                        principalTable: "Obras",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Seats",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Numero = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ObraId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false)
+                    Number = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    SessionId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Seats", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Seats_Obras_ObraId",
-                        column: x => x.ObraId,
-                        principalTable: "Obras",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Seats_Sessions_SessionId",
+                        column: x => x.SessionId,
+                        principalTable: "Sessions",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Seats_Users_UserId",
                         column: x => x.UserId,
@@ -69,14 +88,19 @@ namespace TeatroBack.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Seats_ObraId",
+                name: "IX_Seats_SessionId",
                 table: "Seats",
-                column: "ObraId");
+                column: "SessionId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Seats_UserId",
                 table: "Seats",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sessions_ObraId",
+                table: "Sessions",
+                column: "ObraId");
         }
 
         /// <inheritdoc />
@@ -86,10 +110,13 @@ namespace TeatroBack.Data.Migrations
                 name: "Seats");
 
             migrationBuilder.DropTable(
-                name: "Obras");
+                name: "Sessions");
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Obras");
         }
     }
 }

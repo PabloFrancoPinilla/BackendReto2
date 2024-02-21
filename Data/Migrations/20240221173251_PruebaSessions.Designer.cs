@@ -11,8 +11,8 @@ using TeatroBack.Data;
 namespace TeatroBack.Data.Migrations
 {
     [DbContext(typeof(ObraContext))]
-    [Migration("20240220192659_PruebaUsers")]
-    partial class PruebaUsers
+    [Migration("20240221173251_PruebaSessions")]
+    partial class PruebaSessions
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,23 +61,45 @@ namespace TeatroBack.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Numero")
+                    b.Property<string>("Number")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ObraId")
+                    b.Property<int>("SessionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ObraId");
+                    b.HasIndex("SessionId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Seats");
+                });
+
+            modelBuilder.Entity("TeatroBack.Models.Session", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ObraId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ObraId");
+
+                    b.ToTable("Sessions");
                 });
 
             modelBuilder.Entity("TeatroBack.Models.User", b =>
@@ -107,10 +129,10 @@ namespace TeatroBack.Data.Migrations
 
             modelBuilder.Entity("TeatroBack.Models.Seat", b =>
                 {
-                    b.HasOne("TeatroBack.Models.Obra", "Obra")
+                    b.HasOne("TeatroBack.Models.Session", "Session")
                         .WithMany("Seats")
-                        .HasForeignKey("ObraId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("SessionId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("TeatroBack.Models.User", "User")
@@ -119,12 +141,28 @@ namespace TeatroBack.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Obra");
+                    b.Navigation("Session");
 
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("TeatroBack.Models.Session", b =>
+                {
+                    b.HasOne("TeatroBack.Models.Obra", "Obra")
+                        .WithMany("Sessions")
+                        .HasForeignKey("ObraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Obra");
+                });
+
             modelBuilder.Entity("TeatroBack.Models.Obra", b =>
+                {
+                    b.Navigation("Sessions");
+                });
+
+            modelBuilder.Entity("TeatroBack.Models.Session", b =>
                 {
                     b.Navigation("Seats");
                 });

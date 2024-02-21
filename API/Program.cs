@@ -12,12 +12,18 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("ServerDB");
 builder.Services.AddScoped<IObraService,ObraService>();
+builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<ISeatService,SeatService>();
+builder.Services.AddScoped<ISessionService,SessionService>();
 // Register database context
 builder.Services.AddDbContext<ObraContext>(options =>
     options.UseSqlServer(connectionString));
 
 // Register repositories
 builder.Services.AddScoped<IObraRepository, ObraEFRepository>();
+builder.Services.AddScoped<IUserRepository, UserEFRepository>();
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 
 // Register services
 var app = builder.Build();

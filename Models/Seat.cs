@@ -8,12 +8,13 @@ public class Seat
     [Key]
     public int Id { get; set; }
     [Required]
-    public string Numero { get; set; }
+    public string Number { get; set; }
     [Required]
-    public int ObraId { get; set; }
-    public Obra Obra { get; set; }
+    public string State {get; set;}
     public int UserId { get; set; }
     public User User { get; set; }
+    public int SessionId { get; set; }
+    public Session Session { get; set; }
 
 
 }

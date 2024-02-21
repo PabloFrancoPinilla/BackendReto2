@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\api\\TeatroBack.API.csproj": {}
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\api\\TeatroBack.API.csproj": {
+    "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\api\\TeatroBack.API.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj",
         "projectName": "TeatroBack.API",
-        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\api\\TeatroBack.API.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\API\\TeatroBack.API.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\api\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"

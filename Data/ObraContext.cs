@@ -15,35 +15,34 @@ namespace TeatroBack.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*    modelBuilder.Entity<Obra>().HasData(
-                  new Obra {Id=1, Name = "Pepeorino", IsGlutenFree = true},
-                  new Obra { Id=2,Name = "Bacon", IsGlutenFree = false}
-              );
-              modelBuilder.Entity<Ingrediente>().HasData(
-                  new Ingrediente {Id=1,  Name = "Cebolla", Origin="Vegetable", Stock = 100, Description = "Deposito inicial", IsVegan = true},
-                  new Ingrediente { Id=2, Name = "Pepeorino", Origin="Animal", Stock = 100, Description = "Deposito", IsVegan= false},
-                  new Ingrediente { Id=3, Name = "Tomato", Origin="Vegetal", Stock = 100, Description = "Retiro", IsVegan= true},
-                  new Ingrediente { Id=4, Name = "Cheese", Origin="Animal", Stock = 100, Description = "Deposito", IsVegan=false}
-              ); */
+            
 
-
-          modelBuilder.Entity<Obra>()
-                .HasMany(o => o.Seats)
-                .WithOne(s => s.Obra)
-                .HasForeignKey(s => s.ObraId);
+          
 
             modelBuilder.Entity<Seat>()
                 .HasOne(s => s.User)
                 .WithMany(u => u.Seats)
                 .HasForeignKey(s => s.UserId);
-                
-               
+
+          
+            modelBuilder.Entity<Session>()
+                .HasOne(s => s.Obra)
+                .WithMany(o => o.Sessions)
+                .HasForeignKey(s => s.ObraId);
+
+          
+            modelBuilder.Entity<Seat>()
+                .HasOne(s => s.Session)
+                .WithMany(s => s.Seats)
+                .HasForeignKey(s => s.SessionId)
+                 .OnDelete(DeleteBehavior.NoAction);
         }
-        
+
 
         public DbSet<Obra> Obras { get; set; }
         public DbSet<Seat> Seats { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Session> Sessions {get; set;}
 
     }
 }
