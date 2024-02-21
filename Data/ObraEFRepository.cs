@@ -42,7 +42,7 @@ namespace TeatroBack.Data
             _context.Obras.Remove(obra);
             SaveChanges();
         }
-
+        //Guardar Cambios
         public void SaveChanges()
         {
             _context.SaveChanges();
