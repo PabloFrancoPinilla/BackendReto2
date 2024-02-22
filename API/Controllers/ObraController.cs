@@ -46,15 +46,22 @@ namespace TeteObra.Controllers
             if (existingObra == null)
                 return NotFound();
 
-            // Actualiza solo las propiedades de la obra
-            existingObra.Name = Obra.Name;
-            existingObra.Image = Obra.Image;
-            existingObra.Duration = Obra.Duration;
-            existingObra.Genre = Obra.Genre;
-
-            _ObraService.Update(existingObra);
+            _ObraService.Update(Obra);
 
             return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var Obra = _ObraService.Get(id);
+
+            if (Obra == null)
+                return NotFound();
+
+            _ObraService.Delete(id);
+
+            return Ok();
         }
 
 
