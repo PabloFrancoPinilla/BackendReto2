@@ -7,7 +7,7 @@ public class Session
     [Key]
     public int Id { get; set; }
     //Clave Foranea de Obra
-    [Required]
+    
     public int ObraId { get; set; }
     public Obra Obra { get; set; }
 
