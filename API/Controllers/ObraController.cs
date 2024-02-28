@@ -30,10 +30,23 @@ namespace TeteObra.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Obra Obra)
+        public IActionResult Create([FromBody] ObraDto obraDto)
         {
-            _ObraService.Add(Obra);
-            return CreatedAtAction(nameof(Get), new { id = Obra.Id }, Obra);
+            if (obraDto == null)
+            {
+                return BadRequest();
+            }
+            var obra = new Obra
+            {
+                Name = obraDto.Name,
+                Image = obraDto.Image,
+                Duration = obraDto.Duration,
+                Genre = obraDto.Genre,
+
+            };
+
+            _ObraService.Add(obra);
+            return CreatedAtAction(nameof(Get), new { id = obra.Id }, obra);
         }
 
         [HttpPut("{id}")]
@@ -69,6 +82,7 @@ namespace TeteObra.Controllers
 
             return Ok();
         }
+
 
 
     }

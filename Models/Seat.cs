@@ -10,7 +10,7 @@ public class Seat
     [Required]
     public string Number { get; set; }
     [Required]
-    public string State {get; set;}
+    public string State { get; set; }
     //Clave Foranea User
     public int UserId { get; set; }
     public User User { get; set; }
@@ -18,6 +18,6 @@ public class Seat
     public int SessionId { get; set; }
     public Session Session { get; set; }
 
-    public Seat(){}
+    public Seat() { }
 
 }
