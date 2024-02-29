@@ -12,11 +12,11 @@ public class Seat
     [Required]
     public string State { get; set; }
     //Clave Foranea User
-    public int UserId { get; set; }
-    public User User { get; set; }
+    public int? UserId { get; set; }
+    public User? User { get; set; }
     //Clave Foranea Session
-    public int SessionId { get; set; }
-    public Session Session { get; set; }
+    public int ?SessionId { get; set; }
+    public Session? Session { get; set; }
 
     public Seat() { }
 

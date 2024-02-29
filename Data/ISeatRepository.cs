@@ -7,4 +7,5 @@ public interface ISeatRepository
  void Add(Seat seat);
  void Update(Seat seat);
  void Delete(int id);
+ List<Seat> GetSeatsByUserId(int userId);
 }

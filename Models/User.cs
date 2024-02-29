@@ -12,10 +12,8 @@ public class User
     public string LastName { get; set; }
     [Required]
     public string Mail { get; set; }
-    public List<Seat> Seats { get; set; }
     public User()
     {
-        Seats = new List<Seat>();
     }
 
 }

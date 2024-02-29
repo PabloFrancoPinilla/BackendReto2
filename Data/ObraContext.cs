@@ -21,7 +21,7 @@ namespace TeatroBack.Data
 
             modelBuilder.Entity<Seat>()
                 .HasOne(s => s.User)
-                .WithMany(u => u.Seats)
+                .WithMany()
                 .HasForeignKey(s => s.UserId);
 
           //Aqui establecemos las relaciones (Por ejemplo en este cada  sesion tiene una obra y una obra puede tener muchas sesiones.)

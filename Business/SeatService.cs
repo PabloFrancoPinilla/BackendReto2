@@ -20,6 +20,7 @@ public class SeatService: ISeatService
     public void Update(Seat Seat) => _SeatRepository.Update(Seat);
 
     public void Delete(int id) => _SeatRepository.Delete(id);
+    public  List<Seat> GetSeatsByUserId(int userId) => _SeatRepository.GetSeatsByUserId(userId);
    
 }
 

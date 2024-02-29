@@ -43,6 +43,11 @@ namespace TeatroBack.Data
             SaveChanges();
         }
 
+        public List<Seat> GetSeatsByUserId(int userId)
+        {
+            return _context.Seats.Where(s => s.UserId == userId).ToList();
+        }
+
         public void SaveChanges()
         {
             _context.SaveChanges();

@@ -9,11 +9,15 @@ namespace TeteUser.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _UserService;
+        private readonly ISeatService _SeatService;
 
-        public UserController(IUserService UserService)
+        public UserController(IUserService UserService, ISeatService SeatService)
         {
             _UserService = UserService;
+            _SeatService = SeatService;
         }
+
+
 
         [HttpGet]
         public ActionResult<List<User>> GetAll() => _UserService.GetAll();
@@ -62,6 +66,12 @@ namespace TeteUser.Controllers
             _UserService.Delete(id);
 
             return NoContent();
+        }
+        [HttpGet("{userId}/seats")]
+        public IActionResult GetSeatsByUserId(int userId)
+        {
+            var seats = _SeatService.GetSeatsByUserId(userId);
+            return Ok(seats);
         }
 
 

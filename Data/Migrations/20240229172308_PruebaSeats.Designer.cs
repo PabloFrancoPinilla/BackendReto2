@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeatroBack.Data;
 
@@ -11,9 +12,11 @@ using TeatroBack.Data;
 namespace TeatroBack.Data.Migrations
 {
     [DbContext(typeof(ObraContext))]
-    partial class ObraContextModelSnapshot : ModelSnapshot
+    [Migration("20240229172308_PruebaSeats")]
+    partial class PruebaSeats
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,13 +67,14 @@ namespace TeatroBack.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("SessionId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -130,11 +134,14 @@ namespace TeatroBack.Data.Migrations
                     b.HasOne("TeatroBack.Models.Session", "Session")
                         .WithMany("Seats")
                         .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("TeatroBack.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                        .WithMany("Seats")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Session");
 
@@ -158,6 +165,11 @@ namespace TeatroBack.Data.Migrations
                 });
 
             modelBuilder.Entity("TeatroBack.Models.Session", b =>
+                {
+                    b.Navigation("Seats");
+                });
+
+            modelBuilder.Entity("TeatroBack.Models.User", b =>
                 {
                     b.Navigation("Seats");
                 });

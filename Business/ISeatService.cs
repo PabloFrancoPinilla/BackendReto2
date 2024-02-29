@@ -8,6 +8,7 @@ public interface ISeatService{
     void Add(Seat Seat);
     void Update(Seat Seat);
     void Delete(int id);
+    List<Seat> GetSeatsByUserId(int userId);
     
 
 }
