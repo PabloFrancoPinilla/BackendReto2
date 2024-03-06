@@ -48,9 +48,22 @@ namespace TeatroBack.Data
             _context.SaveChanges();
         }
 
-        public List<Obra> GetAll()
+        public List<ObraDto> GetAll()
         {
-            return _context.Obras.ToList();
+
+            var obra = _context.Obras
+            .ToList();
+
+            var obraDto = obra.Select(o => new ObraDto
+            {
+                Id = o.Id,
+                Name = o.Name,
+                Image = o.Image,
+                Duration = o.Duration,
+                Genre = o.Genre
+            }).ToList();
+
+            return obraDto;
         }
     }
 }

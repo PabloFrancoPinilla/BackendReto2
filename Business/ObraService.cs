@@ -11,7 +11,7 @@ public class ObraService: IObraService
     {
         _obraRepository = obraRepository;
     }
-    public List<Obra> GetAll() => _obraRepository.GetAll();
+    public List<ObraDto> GetAll() => _obraRepository.GetAll();
 
     public Obra? Get(int id) => _obraRepository.Get(id);
 

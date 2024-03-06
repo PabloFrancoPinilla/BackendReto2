@@ -48,9 +48,26 @@ namespace TeatroBack.Data
             _context.SaveChanges();
         }
 
-        public List<Session> GetAll()
+        public List<SessionDto> GetAll()
         {
-            return _context.Sessions.ToList();
+            var session = _context.Sessions
+            .Include(s => s.Obra)
+            .ToList();
+
+            var sessionDto = session.Select(s => new SessionDto
+            {
+                Id = s.Id,
+                Obra = new ObraDto
+                {
+                    Id = s.Obra.Id,
+                    Name = s.Obra.Name,
+                    Image = s.Obra.Image,
+                    Duration = s.Obra.Duration,
+                    Genre = s.Obra.Genre
+                }
+            }).ToList();
+
+            return sessionDto;
         }
     }
 }

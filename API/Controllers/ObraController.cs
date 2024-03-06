@@ -16,7 +16,7 @@ namespace TeteObra.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Obra>> GetAll() => _ObraService.GetAll();
+        public ActionResult<List<ObraDto>> GetAll() => _ObraService.GetAll();
 
         [HttpGet("{id}")]
         public ActionResult<Obra> Get(int id)
@@ -42,7 +42,6 @@ namespace TeteObra.Controllers
                 Image = obraDto.Image,
                 Duration = obraDto.Duration,
                 Genre = obraDto.Genre,
-
             };
 
             _ObraService.Add(obra);

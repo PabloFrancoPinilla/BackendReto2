@@ -16,7 +16,7 @@ namespace TeteSession.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Session>> GetAll() => _SessionService.GetAll();
+        public ActionResult<List<SessionDto>> GetAll() => _SessionService.GetAll();
 
         [HttpGet("{id}")]
         public ActionResult<Session> Get(int id)
@@ -30,8 +30,18 @@ namespace TeteSession.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Session Session)
+        public IActionResult Create([FromBody] SessionPostDto SessionPostDto)
         {
+            if (SessionPostDto == null)
+            {
+                return BadRequest();
+            }
+            var Session = new Session
+            {
+                ObraId = SessionPostDto.ObraId,
+            };
+
+
             _SessionService.Add(Session);
             return CreatedAtAction(nameof(Get), new { id = Session.Id }, Session);
         }
