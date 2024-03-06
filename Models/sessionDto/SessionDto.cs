@@ -6,6 +6,7 @@ public class SessionDto
 {
     public int Id { get; set; }
     public ObraDto Obra { get; set; }
+    
 
     public SessionDto() { }
 

@@ -16,7 +16,7 @@ namespace TeteSeat.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Seat>> GetAll() => _SeatService.GetAll();
+        public ActionResult<List<SeatDto>> GetAll() => _SeatService.GetAll();
 
         [HttpGet("{id}")]
         public ActionResult<Seat> Get(int id)
@@ -30,11 +30,26 @@ namespace TeteSeat.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Seat Seat)
+        public IActionResult Create([FromBody] SeatCreateDto SeatCreateDto)
+
         {
+            if (SeatCreateDto == null)
+            {
+                return BadRequest();
+            }
+
+            var Seat = new Seat
+            {
+                Number = SeatCreateDto.Number,
+                SessionId = SeatCreateDto.SessionId,
+                UserId = SeatCreateDto.UserId,
+                State = SeatCreateDto.State
+            };
             _SeatService.Add(Seat);
             return CreatedAtAction(nameof(Get), new { id = Seat.Id }, Seat);
         }
+
+
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, Seat Seat)

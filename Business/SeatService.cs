@@ -11,7 +11,7 @@ public class SeatService: ISeatService
     {
         _SeatRepository = SeatRepository;
     }
-    public List<Seat> GetAll() => _SeatRepository.GetAll();
+    public List<SeatDto> GetAll() => _SeatRepository.GetAll();
 
     public Seat? Get(int id) => _SeatRepository.Get(id);
 
