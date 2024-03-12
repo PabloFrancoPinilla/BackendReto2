@@ -14,6 +14,7 @@
         "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\NuGet.Config",
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -71,6 +72,7 @@
         "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\NuGet.Config",
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -109,6 +111,14 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Extensions.Logging.File": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
@@ -144,6 +154,7 @@
         "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\NuGet.Config",
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [

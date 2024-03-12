@@ -3,7 +3,7 @@ namespace TeatroBack.Business;
 using TeatroBack.Models;
 
 public interface IObraService{
-    List<Obra>GetAll();
+    List<ObraDto>GetAll();
     Obra? Get(int id);
     void Add(Obra obra);
     void Update(Obra obra);

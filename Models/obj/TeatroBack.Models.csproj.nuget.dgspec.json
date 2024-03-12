@@ -14,6 +14,7 @@
         "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+          "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\NuGet.Config",
           "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [

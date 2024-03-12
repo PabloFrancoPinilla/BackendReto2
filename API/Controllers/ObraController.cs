@@ -16,74 +16,73 @@ namespace TeteObra.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Obra>> GetAll() => _ObraService.GetAll();
+        public ActionResult<List<ObraDto>> GetAll() => _ObraService.GetAll();
 
         [HttpGet("{id}")]
         public ActionResult<Obra> Get(int id)
         {
             var Obra = _ObraService.Get(id);
 
-            if (Obra == null)
-                return NotFound("hehe que loco");
-
+            if (Obra == null) { 
+            return NotFound("hehe que loco");
+        }
             return Ok(Obra);
-        }
-
-        [HttpPost]
-        public IActionResult Create([FromBody] ObraDto obraDto)
-        {
-            if (obraDto == null)
-            {
-                return BadRequest();
-            }
-            var obra = new Obra
-            {
-                Name = obraDto.Name,
-                Image = obraDto.Image,
-                Duration = obraDto.Duration,
-                Genre = obraDto.Genre,
-
-            };
-
-            _ObraService.Add(obra);
-            return CreatedAtAction(nameof(Get), new { id = obra.Id }, obra);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Obra Obra)
-        {
-            if (id != Obra.Id)
-                return BadRequest();
-
-            var existingObra = _ObraService.Get(id);
-            if (existingObra == null)
-                return NotFound();
-
-            // Actualiza solo las propiedades de la obra
-            existingObra.Name = Obra.Name;
-            existingObra.Image = Obra.Image;
-            existingObra.Duration = Obra.Duration;
-            existingObra.Genre = Obra.Genre;
-            existingObra.Sessions = Obra.Sessions;
-
-            _ObraService.Update(existingObra);
-
-            return NoContent();
-        }
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            var Obra = _ObraService.Get(id);
-
-            if (Obra == null)
-                return NotFound();
-
-            _ObraService.Delete(id);
-
-            return Ok();
-        }
-
-
-
     }
+
+    [HttpPost]
+    public IActionResult Create([FromBody] ObraDto obraDto)
+    {
+        if (obraDto == null)
+        {
+            return BadRequest();
+        }
+        var obra = new Obra
+        {
+            Name = obraDto.Name,
+            Image = obraDto.Image,
+            Duration = obraDto.Duration,
+            Genre = obraDto.Genre,
+        };
+
+        _ObraService.Add(obra);
+        return CreatedAtAction(nameof(Get), new { id = obra.Id }, obra);
+    }
+
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Obra Obra)
+    {
+        if (id != Obra.Id)
+            return BadRequest();
+
+        var existingObra = _ObraService.Get(id);
+        if (existingObra == null)
+            return NotFound();
+
+        // Actualiza solo las propiedades de la obra
+        existingObra.Name = Obra.Name;
+        existingObra.Image = Obra.Image;
+        existingObra.Duration = Obra.Duration;
+        existingObra.Genre = Obra.Genre;
+        existingObra.Sessions = Obra.Sessions;
+
+        _ObraService.Update(existingObra);
+
+        return NoContent();
+    }
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var Obra = _ObraService.Get(id);
+
+        if (Obra == null)
+            return NotFound();
+
+        _ObraService.Delete(id);
+
+        return Ok();
+    }
+
+
+
+}
 }

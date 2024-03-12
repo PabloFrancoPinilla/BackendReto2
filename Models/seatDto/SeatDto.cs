@@ -9,6 +9,15 @@ public class SeatDto
     public int Id { get; set; }
 
     [Required]
-    public string Number { get; set; }
+    public int Number { get; set; }
+
+    public int? UserId { get; set; }
+
+    public string State { get; set; }
+
+    public SessionDto Session { get; set; }
+
+
+    public SeatDto() { }
 
 }

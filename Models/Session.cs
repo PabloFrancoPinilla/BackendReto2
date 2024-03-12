@@ -8,7 +8,6 @@ public class Session
     public int Id { get; set; }
 
     //Clave Foranea de Obra
-
     public int ObraId { get; set; }
     public Obra Obra { get; set; }
 

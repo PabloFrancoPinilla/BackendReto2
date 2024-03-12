@@ -11,7 +11,7 @@ public class SeatService: ISeatService
     {
         _SeatRepository = SeatRepository;
     }
-    public List<Seat> GetAll() => _SeatRepository.GetAll();
+    public List<SeatDto> GetAll() => _SeatRepository.GetAll();
 
     public Seat? Get(int id) => _SeatRepository.Get(id);
 
@@ -21,6 +21,8 @@ public class SeatService: ISeatService
 
     public void Delete(int id) => _SeatRepository.Delete(id);
     public  List<Seat> GetSeatsByUserId(int userId) => _SeatRepository.GetSeatsByUserId(userId);
+    public  List<Seat> GetSeatsBySession(int number) => _SeatRepository.GetSeatsBySession(number);
+    public  List<Seat> GetSeatsBySessionId(int sessionId) => _SeatRepository.GetSeatsBySession(sessionId);
    
 }
 

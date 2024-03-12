@@ -3,12 +3,14 @@ namespace TeatroBack.Business;
 using TeatroBack.Models;
 
 public interface ISeatService{
-    List<Seat>GetAll();
+    List<SeatDto>GetAll();
     Seat? Get(int id);
     void Add(Seat Seat);
     void Update(Seat Seat);
     void Delete(int id);
     List<Seat> GetSeatsByUserId(int userId);
+    List<Seat>  GetSeatsBySession(int number);
+    List<Seat> GetSeatsBySessionId(int sessionId);
     
 
 }

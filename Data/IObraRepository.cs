@@ -2,7 +2,7 @@
 using TeatroBack.Models;
 public interface IObraRepository
 {
- List<Obra> GetAll();
+ List<ObraDto> GetAll();
  Obra Get(int id);
  void Add(Obra obra);
  void Update(Obra obra);
