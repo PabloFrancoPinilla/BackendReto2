@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8ptxekKbmKt1n1263IEkURdMaP26yr6cON5w2mJrcEVEEjeUoT/S6g46CEBZflYpBKUtVcjVYo1xgKveQoB71w==",
+  "dgSpecHash": "oJn5qiWglB9UscBdS8r+7bi9oUmcehc5OYyPuw2y4LTErvVV86ycGFzG7UiK08j4rliQrxXQQA0tq4th+UF/0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Business\\TeatroBack.Business.csproj",
+  "projectFilePath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\franc\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\franc\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

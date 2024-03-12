@@ -13,14 +13,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+      "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
       "projectName": "TeatroBack.Models",
-      "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+      "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
       "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\Models\\obj\\",
+      "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\Desktop\\BackendReto2\\BackendReto2\\BackendReto2\\NuGet.Config",
+        "C:\\Users\\franc\\Desktop\\BackendReto2\\NuGet.Config",
         "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
