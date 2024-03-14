@@ -23,66 +23,72 @@ namespace TeteObra.Controllers
         {
             var Obra = _ObraService.Get(id);
 
-            if (Obra == null) { 
-            return NotFound("hehe que loco");
-        }
+            if (Obra == null)
+            {
+                return NotFound("hehe que loco");
+            }
             return Ok(Obra);
-    }
-
-    [HttpPost]
-    public IActionResult Create([FromBody] ObraCreateDto obraCreateDto)
-    {
-        if (obraCreateDto == null)
-        {
-            return BadRequest();
         }
-        var obra = new Obra
+
+        [HttpPost]
+        public IActionResult Create([FromBody] ObraCreateDto obraCreateDto)
         {
-            Name = obraCreateDto.Name,
-            Image = obraCreateDto.Image,
-            Duration = obraCreateDto.Duration,
-            Genre = obraCreateDto.Genre,
-        };
+            if (obraCreateDto == null)
+            {
+                return BadRequest();
+            }
+            var obra = new Obra
+            {
+                Name = obraCreateDto.Name,
+                Image = obraCreateDto.Image,
+                Duration = obraCreateDto.Duration,
+                Genre = obraCreateDto.Genre,
+            };
 
-        _ObraService.Add(obra);
-        return CreatedAtAction(nameof(Get), new { id = obra.Id }, obra);
+            _ObraService.Add(obra);
+            return CreatedAtAction(nameof(Get), new { id = obra.Id }, obra);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Obra Obra)
+        {
+            if (id != Obra.Id)
+                return BadRequest();
+
+            var existingObra = _ObraService.Get(id);
+            if (existingObra == null)
+                return NotFound();
+
+            // Actualiza solo las propiedades de la obra
+            existingObra.Name = Obra.Name;
+            existingObra.Image = Obra.Image;
+            existingObra.Duration = Obra.Duration;
+            existingObra.Genre = Obra.Genre;
+            existingObra.Sessions = Obra.Sessions;
+
+            _ObraService.Update(existingObra);
+
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var Obra = _ObraService.Get(id);
+
+            if (Obra == null)
+                return NotFound();
+
+            _ObraService.Delete(id);
+
+            return Ok();
+        }
+        [HttpGet("{obraId}/sessions")]
+        public IActionResult GetSessionsByObraId(int obraId)
+        {
+            var sessisons = _ObraService.GetSessionsByObraId(obraId);
+            return Ok(sessisons);
+        }
+
+
     }
-
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, Obra Obra)
-    {
-        if (id != Obra.Id)
-            return BadRequest();
-
-        var existingObra = _ObraService.Get(id);
-        if (existingObra == null)
-            return NotFound();
-
-        // Actualiza solo las propiedades de la obra
-        existingObra.Name = Obra.Name;
-        existingObra.Image = Obra.Image;
-        existingObra.Duration = Obra.Duration;
-        existingObra.Genre = Obra.Genre;
-        existingObra.Sessions = Obra.Sessions;
-
-        _ObraService.Update(existingObra);
-
-        return NoContent();
-    }
-    [HttpDelete("{id}")]
-    public IActionResult Delete(int id)
-    {
-        var Obra = _ObraService.Get(id);
-
-        if (Obra == null)
-            return NotFound();
-
-        _ObraService.Delete(id);
-
-        return Ok();
-    }
-
-
-
-}
 }

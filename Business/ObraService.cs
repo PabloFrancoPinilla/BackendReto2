@@ -1,11 +1,11 @@
 ﻿namespace TeatroBack.Business;
 using TeatroBack.Models;
 using TeatroBack.Data;
-public class ObraService: IObraService
+public class ObraService : IObraService
 {
 
 
-   private readonly IObraRepository _obraRepository;
+    private readonly IObraRepository _obraRepository;
 
     public ObraService(IObraRepository obraRepository)
     {
@@ -20,7 +20,10 @@ public class ObraService: IObraService
     public void Update(Obra Obra) => _obraRepository.Update(Obra);
 
     public void Delete(int id) => _obraRepository.Delete(id);
-   
+
+    public List<SessionObraDto> GetSessionsByObraId(int obraId) => _obraRepository.GetSessionsByObraId(obraId);
+
+
 }
 
 

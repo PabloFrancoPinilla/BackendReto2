@@ -77,18 +77,19 @@ namespace TeteSession.Controllers
             return NoContent();
         }
 
-    [HttpGet("{number}/seats")]
+        [HttpGet("{number}/seats")]
         public IActionResult GetSeatsBySession(int number)
         {
             var seats = _SeatsService.GetSeatsBySession(number);
             return Ok(seats);
         }
-    
-     [HttpGet("{salaId}/seatsById")]
+
+        [HttpGet("{salaId}/seatsById")]
         public IActionResult GetSeatsBySessionId(int salaId)
         {
             var seats = _SeatsService.GetSeatsBySalaId(salaId);
             return Ok(seats);
         }
+
     }
 }

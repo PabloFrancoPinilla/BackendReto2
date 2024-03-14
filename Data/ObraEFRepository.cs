@@ -83,7 +83,7 @@ namespace TeatroBack.Data
             _context.SaveChanges();
         }
 
-        public List<SessionObraDto> GetSessionsByObra(int obraId)
+        public List<SessionObraDto> GetSessionsByObraId(int obraId)
         {
             try
             {
@@ -92,8 +92,6 @@ namespace TeatroBack.Data
                 {
                     Id = o.Id,
                     Date = o.Date,
-
-
                 })
                 .ToList();
                 return sessions;
