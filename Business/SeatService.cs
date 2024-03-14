@@ -22,7 +22,7 @@ public class SeatService: ISeatService
     public void Delete(int id) => _SeatRepository.Delete(id);
     public  List<Seat> GetSeatsByUserId(int userId) => _SeatRepository.GetSeatsByUserId(userId);
     public  List<Seat> GetSeatsBySession(int number) => _SeatRepository.GetSeatsBySession(number);
-    public  List<Seat> GetSeatsBySessionId(int sessionId) => _SeatRepository.GetSeatsBySession(sessionId);
+    public  List<SeatSalaDto> GetSeatsBySalaId(int salaId) => _SeatRepository.GetSeatsBySalaId(salaId);
    
 }
 

@@ -31,11 +31,17 @@ namespace TeatroBack.Data
                 .HasForeignKey(s => s.ObraId);
 
 
+            modelBuilder.Entity<Session>()
+                          .HasOne(s => s.Sala)
+                          .WithMany(s => s.Sessions)
+                          .HasForeignKey(s => s.SalaId)
+                          .OnDelete(DeleteBehavior.NoAction); //Esto es por restricciones al borrar de cascada.
+
             modelBuilder.Entity<Seat>()
-                .HasOne(s => s.Session)
-                .WithMany(s => s.Seats)
-                .HasForeignKey(s => s.SessionId)
-                 .OnDelete(DeleteBehavior.NoAction);//Esto es por restricciones al borrar de cascada.
+               .HasOne(s => s.Sala)
+               .WithMany(s => s.Seats)
+               .HasForeignKey(s => s.SalaId)
+               .OnDelete(DeleteBehavior.NoAction);
         }
 
 
@@ -43,6 +49,8 @@ namespace TeatroBack.Data
         public DbSet<Seat> Seats { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Session> Sessions { get; set; }
+        public DbSet<Sala> Salas { get; set; }
+
 
     }
 }

@@ -10,7 +10,7 @@ public interface ISeatService{
     void Delete(int id);
     List<Seat> GetSeatsByUserId(int userId);
     List<Seat>  GetSeatsBySession(int number);
-    List<Seat> GetSeatsBySessionId(int sessionId);
+    List<SeatSalaDto> GetSeatsBySalaId(int salaId);
     
 
 }

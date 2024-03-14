@@ -26,6 +26,8 @@ builder.Services.AddScoped<IObraService, ObraService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISeatService, SeatService>();
 builder.Services.AddScoped<ISessionService, SessionService>();
+builder.Services.AddScoped<ISalaService, SalaService>();
+
 // Register database context
 builder.Services.AddDbContext<ObraContext>(options =>
     options.UseSqlServer(connectionString));
@@ -35,6 +37,8 @@ builder.Services.AddScoped<IObraRepository, ObraEFRepository>();
 builder.Services.AddScoped<IUserRepository, UserEFRepository>();
 builder.Services.AddScoped<ISeatRepository, SeatRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+builder.Services.AddScoped<ISalaRepository, SalaRepository>();
+
 
 // Register services
 var app = builder.Build();

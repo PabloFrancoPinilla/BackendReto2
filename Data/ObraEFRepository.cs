@@ -20,11 +20,14 @@ namespace TeatroBack.Data
 
         public void Add(Obra obra)
         {
-            try{
-            _context.Obras.Add(obra);
-            SaveChanges();
-            }catch(Exception e){
-                _logger.LogError(e,"An error ocurred while adding an obra");
+            try
+            {
+                _context.Obras.Add(obra);
+                SaveChanges();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error ocurred while adding an obra");
                 throw;
             }
         }
@@ -58,16 +61,19 @@ namespace TeatroBack.Data
 
         public void Delete(int obraId)
         {
-            try{
-            var obra = Get(obraId);
-            if (obra == null)
+            try
             {
-                throw new KeyNotFoundException("Obra not found.");
+                var obra = Get(obraId);
+                if (obra == null)
+                {
+                    throw new KeyNotFoundException("Obra not found.");
+                }
+                _context.Obras.Remove(obra);
+                SaveChanges();
             }
-            _context.Obras.Remove(obra);
-            SaveChanges();
-            }catch(Exception e){
-                _logger.LogError(e,"An error ocurred while deleting an obra");
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error ocurred while deleting an obra");
                 throw;
             }
         }
@@ -77,24 +83,50 @@ namespace TeatroBack.Data
             _context.SaveChanges();
         }
 
+        public List<SessionObraDto> GetSessionsByObra(int obraId)
+        {
+            try
+            {
+                var sessions = _context.Sessions.Where(o => o.ObraId == obraId)
+                .Select(o => new SessionObraDto
+                {
+                    Id = o.Id,
+                    Date = o.Date,
+
+
+                })
+                .ToList();
+                return sessions;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                throw;
+            }
+
+        }
+
         public List<ObraDto> GetAll()
         {
-            try{
-            var obra = _context.Obras
-            .ToList();
-
-            var obraDto = obra.Select(o => new ObraDto
+            try
             {
-                Id = o.Id,
-                Name = o.Name,
-                Image = o.Image,
-                Duration = o.Duration,
-                Genre = o.Genre
-            }).ToList();
+                var obra = _context.Obras
+                .ToList();
 
-            return obraDto;
-            }catch(Exception e){
-                _logger.LogError(e,"An error ocurred while showing obras");
+                var obraDto = obra.Select(o => new ObraDto
+                {
+                    Id = o.Id,
+                    Name = o.Name,
+                    Image = o.Image,
+                    Duration = o.Duration,
+                    Genre = o.Genre
+                }).ToList();
+
+                return obraDto;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error ocurred while showing obras");
                 throw;
             }
         }

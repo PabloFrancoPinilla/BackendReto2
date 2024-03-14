@@ -51,6 +51,25 @@ namespace TeatroBack.Data.Migrations
                     b.ToTable("Obras");
                 });
 
+            modelBuilder.Entity("TeatroBack.Models.Sala", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Salas");
+                });
+
             modelBuilder.Entity("TeatroBack.Models.Seat", b =>
                 {
                     b.Property<int>("Id")
@@ -62,7 +81,7 @@ namespace TeatroBack.Data.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SessionId")
+                    b.Property<int>("SalaId")
                         .HasColumnType("int");
 
                     b.Property<string>("State")
@@ -74,7 +93,7 @@ namespace TeatroBack.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SessionId");
+                    b.HasIndex("SalaId");
 
                     b.HasIndex("UserId");
 
@@ -89,12 +108,20 @@ namespace TeatroBack.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("ObraId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SalaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ObraId");
+
+                    b.HasIndex("SalaId");
 
                     b.ToTable("Sessions");
                 });
@@ -126,16 +153,17 @@ namespace TeatroBack.Data.Migrations
 
             modelBuilder.Entity("TeatroBack.Models.Seat", b =>
                 {
-                    b.HasOne("TeatroBack.Models.Session", "Session")
+                    b.HasOne("TeatroBack.Models.Sala", "Sala")
                         .WithMany("Seats")
-                        .HasForeignKey("SessionId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .HasForeignKey("SalaId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
 
                     b.HasOne("TeatroBack.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("Session");
+                    b.Navigation("Sala");
 
                     b.Navigation("User");
                 });
@@ -148,7 +176,15 @@ namespace TeatroBack.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("TeatroBack.Models.Sala", "Sala")
+                        .WithMany("Sessions")
+                        .HasForeignKey("SalaId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("Obra");
+
+                    b.Navigation("Sala");
                 });
 
             modelBuilder.Entity("TeatroBack.Models.Obra", b =>
@@ -156,9 +192,11 @@ namespace TeatroBack.Data.Migrations
                     b.Navigation("Sessions");
                 });
 
-            modelBuilder.Entity("TeatroBack.Models.Session", b =>
+            modelBuilder.Entity("TeatroBack.Models.Sala", b =>
                 {
                     b.Navigation("Seats");
+
+                    b.Navigation("Sessions");
                 });
 #pragma warning restore 612, 618
         }

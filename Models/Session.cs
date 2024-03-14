@@ -10,9 +10,13 @@ public class Session
     //Clave Foranea de Obra
     public int ObraId { get; set; }
     public Obra Obra { get; set; }
+    public DateTime Date { get; set; }
+
+    public int SalaId { get; set; }
+    public Sala Sala { get; set; }
 
     //Esto se lo he puesto de momento por si acaso para en vue por si tenemos que usarlo
-    public List<Seat> Seats { get; set; }
+    
     public Session() { }
 
 }

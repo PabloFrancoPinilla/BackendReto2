@@ -30,18 +30,18 @@ namespace TeteObra.Controllers
     }
 
     [HttpPost]
-    public IActionResult Create([FromBody] ObraDto obraDto)
+    public IActionResult Create([FromBody] ObraCreateDto obraCreateDto)
     {
-        if (obraDto == null)
+        if (obraCreateDto == null)
         {
             return BadRequest();
         }
         var obra = new Obra
         {
-            Name = obraDto.Name,
-            Image = obraDto.Image,
-            Duration = obraDto.Duration,
-            Genre = obraDto.Genre,
+            Name = obraCreateDto.Name,
+            Image = obraCreateDto.Image,
+            Duration = obraCreateDto.Duration,
+            Genre = obraCreateDto.Genre,
         };
 
         _ObraService.Add(obra);

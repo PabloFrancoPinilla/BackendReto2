@@ -41,7 +41,7 @@ namespace TeteSeat.Controllers
             var Seat = new Seat
             {
                 Number = SeatCreateDto.Number,
-                SessionId = SeatCreateDto.SessionId,
+                SalaId = SeatCreateDto.SalaId,
                 UserId = SeatCreateDto.UserId,
                 State = SeatCreateDto.State
             };

@@ -41,6 +41,7 @@ namespace TeteSession.Controllers
             var Session = new Session
             {
                 ObraId = SessionPostDto.ObraId,
+                SalaId = SessionPostDto.SalaId
             };
 
 
@@ -83,10 +84,10 @@ namespace TeteSession.Controllers
             return Ok(seats);
         }
     
-     [HttpGet("{sessionId}/seatsById")]
-        public IActionResult GetSeatsBySessionId(int sessionId)
+     [HttpGet("{salaId}/seatsById")]
+        public IActionResult GetSeatsBySessionId(int salaId)
         {
-            var seats = _SeatsService.GetSeatsBySessionId(sessionId);
+            var seats = _SeatsService.GetSeatsBySalaId(salaId);
             return Ok(seats);
         }
     }

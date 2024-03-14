@@ -79,6 +79,7 @@ namespace TeatroBack.Data
             var sessionDto = session.Select(s => new SessionDto
             {
                 Id = s.Id,
+                Date = s.Date,
                 Obra = new ObraDto
                 {
                     Id = s.Obra.Id,

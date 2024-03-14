@@ -9,7 +9,7 @@ public class SeatCreateDto
     public int Number { get; set; }
 
     [Required]
-    public int SessionId { get; set; }
+    public int SalaId { get; set; }
 
     public int? UserId { get; set; }
 

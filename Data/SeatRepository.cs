@@ -105,11 +105,19 @@ namespace TeatroBack.Data
                 throw;
             }
         }
-          public List<Seat>GetSeatsBySessionId(int sessionId){
+          public List<SeatSalaDto>GetSeatsBySalaId(int salaId){
 
             try
             {
-                return _context.Seats.Where(s => s.SessionId == sessionId).ToList();
+                var seats = _context.Seats.Where(s => s.SalaId == salaId)
+                .Select(s => new SeatSalaDto{
+                    Id = s.Id,
+                    Number = s.Number,
+                    State = s.State,
+                    UserId = s.UserId
+                })
+                .ToList();
+                return seats;
             }
             catch (Exception e)
             {
@@ -128,8 +136,7 @@ namespace TeatroBack.Data
             try
             {
                 var seat = _context.Seats
-                    .Include(s => s.Session)
-                    .ThenInclude(se => se.Obra)
+                    .Include(s => s.SalaId)
                     .Include(s => s.User)
                     .ToList();
 
@@ -139,18 +146,8 @@ namespace TeatroBack.Data
                     State = s.State,
                     Number = s.Number,
                     UserId = s.UserId,
-                    Session = new SessionDto
-                    {
-                        Id = s.Session.Id,
-                        Obra = new ObraDto
-                        {
-                            Id = s.Session.Obra.Id,
-                            Name = s.Session.Obra.Name,
-                            Image = s.Session.Obra.Image,
-                            Duration = s.Session.Obra.Duration,
-                            Genre = s.Session.Obra.Genre
-                        }
-                    }
+                    SalaId = s.SalaId
+                    
                 }).ToList();
 
                 return seatDto;
