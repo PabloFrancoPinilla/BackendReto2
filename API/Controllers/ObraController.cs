@@ -63,7 +63,13 @@ namespace TeteObra.Controllers
             existingObra.Image = obraDto.Image;
             existingObra.Genre = obraDto.Genre;
             existingObra.Duration = obraDto.Duration;
-            existingObra.Sessions = obraDto.Sessions;
+            existingObra.Sessions = obraDto.Sessions?.Select(sessionDto => new Session
+            {
+                Id = sessionDto.Id,
+                ObraId = sessionDto.ObraId,
+                Date = sessionDto.Date,
+                SalaId = sessionDto.SalaId
+            }).ToList();
 
             _ObraService.Update(existingObra);
 

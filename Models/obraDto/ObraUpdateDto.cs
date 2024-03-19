@@ -14,7 +14,7 @@ public class ObraUpdateDto
     [Required]
     public string Genre { get; set; }
 
-    public List<Session> Sessions {get; set;}
+    public List<SessionUpdateDto> Sessions {get; set;}
     public ObraUpdateDto() { }
 
 }
