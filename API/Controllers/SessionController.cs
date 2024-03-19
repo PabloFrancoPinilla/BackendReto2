@@ -41,7 +41,9 @@ namespace TeteSession.Controllers
             var Session = new Session
             {
                 ObraId = SessionPostDto.ObraId,
-                SalaId = SessionPostDto.SalaId
+                SalaId = SessionPostDto.SalaId,
+                Date = SessionPostDto.Date
+                
             };
 
 
