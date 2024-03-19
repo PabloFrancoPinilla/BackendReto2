@@ -13,11 +13,11 @@ public class SessionService : ISessionService
     }
     public List<SessionDto> GetAll() => _SessionRepository.GetAll();
 
-    public Session? Get(int id) => _SessionRepository.Get(id);
+    public SessionDto? Get(int id) => _SessionRepository.Get(id);
 
     public void Add(Session Session) => _SessionRepository.Add(Session);
 
-    public void Update(Session Session) => _SessionRepository.Update(Session);
+    public void Update(SessionDto Session) => _SessionRepository.Update(Session);
 
     public void Delete(int id) => _SessionRepository.Delete(id);
 

@@ -35,11 +35,24 @@ namespace TeatroBack.Data
             }
         }
 
-        public Seat? Get(int SeatId)
+        public SeatDto? Get(int SeatId)
         {
             try
             {
-                return _context.Seats.FirstOrDefault(p => p.Id == SeatId);
+                var seatDto =  _context.Seats.FirstOrDefault(p => p.Id == SeatId);
+                if( seatDto != null){
+                    var seat = new SeatDto 
+                    {
+                        Id = seatDto.Id,
+                        Number = seatDto.Number,
+                        UserId = seatDto.UserId,
+                        State = seatDto.State,
+                        SalaId = seatDto.SalaId
+                    };
+                    return seat;
+                }else {
+                    return null;
+                }
             }
             catch (Exception e)
             {
@@ -48,11 +61,15 @@ namespace TeatroBack.Data
             }
         }
 
-        public void Update(Seat Seat)
+        public void Update(SeatDto Seat)
         {
             try
             {
-                _context.Entry(Seat).State = EntityState.Modified;
+                var _seat = _context.Seats.Find(Seat.Id);
+                _seat.Number = Seat.Number;
+                _seat.State = Seat.State;
+                _seat.UserId = Seat.UserId;
+                _context.Entry(_seat).State = EntityState.Modified;
                 SaveChanges();
             }
             catch (Exception e)
@@ -66,7 +83,7 @@ namespace TeatroBack.Data
         {
             try
             {
-                var Seat = Get(SeatId);
+                var Seat = _context.Seats.Find(SeatId);
                 if (Seat == null)
                 {
                     throw new KeyNotFoundException("Seat not found.");

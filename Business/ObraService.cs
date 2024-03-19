@@ -13,11 +13,11 @@ public class ObraService : IObraService
     }
     public List<ObraDto> GetAll() => _obraRepository.GetAll();
 
-    public Obra? Get(int id) => _obraRepository.Get(id);
+    public ObraDto? Get(int id) => _obraRepository.Get(id);
 
     public void Add(Obra Obra) => _obraRepository.Add(Obra);
 
-    public void Update(Obra Obra) => _obraRepository.Update(Obra);
+    public void Update(ObraDto Obra) => _obraRepository.Update(Obra);
 
     public void Delete(int id) => _obraRepository.Delete(id);
 

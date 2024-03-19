@@ -52,6 +52,8 @@ namespace TeteObra.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, ObraUpdateDto obraDto)
         {
+            if (!ModelState.IsValid) return BadRequest();
+
             if (id != obraDto.Id)
                 return BadRequest();
 
@@ -63,13 +65,13 @@ namespace TeteObra.Controllers
             existingObra.Image = obraDto.Image;
             existingObra.Genre = obraDto.Genre;
             existingObra.Duration = obraDto.Duration;
-            existingObra.Sessions = obraDto.Sessions?.Select(sessionDto => new Session
+         /*    existingObra.Sessions = obraDto.Sessions?.Select(sessionDto => new Session
             {
                 Id = sessionDto.Id,
                 ObraId = sessionDto.ObraId,
                 Date = sessionDto.Date,
                 SalaId = sessionDto.SalaId
-            }).ToList();
+            }).ToList(); */
 
             _ObraService.Update(existingObra);
 

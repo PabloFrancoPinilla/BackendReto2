@@ -32,11 +32,27 @@ namespace TeatroBack.Data
             }
         }
 
-        public Obra? Get(int obraId)
+        public ObraDto? Get(int obraId)
         {
             try
             {
-                return _context.Obras.FirstOrDefault(p => p.Id == obraId);
+                var obraDto = _context.Obras.FirstOrDefault(p => p.Id == obraId);
+                if (obraDto != null)
+                {
+                    var obra = new ObraDto
+                    {
+                        Id = obraDto.Id,
+                        Name = obraDto.Name,
+                        Image = obraDto.Image,
+                        Duration = obraDto.Duration,
+                        Genre = obraDto.Genre
+                        
+                    };
+
+                    return obra;
+                }else {
+                    return null;
+                }
             }
             catch (Exception e)
             {
@@ -45,11 +61,16 @@ namespace TeatroBack.Data
             }
         }
 
-        public void Update(Obra obra)
+        public void Update(ObraDto obra)
         {
             try
             {
-                _context.Entry(obra).State = EntityState.Modified;
+                var _obra = _context.Obras.Find(obra.Id);
+                _obra.Name = obra.Name;
+                _obra.Image = obra.Image;
+                _obra.Duration = obra.Duration; 
+                _obra.Genre = obra.Genre;
+                _context.Entry(_obra).State = EntityState.Modified;
                 SaveChanges();
             }
             catch (Exception e)
@@ -63,7 +84,7 @@ namespace TeatroBack.Data
         {
             try
             {
-                var obra = Get(obraId);
+                var obra = _context.Obras.Find(obraId);
                 if (obra == null)
                 {
                     throw new KeyNotFoundException("Obra not found.");

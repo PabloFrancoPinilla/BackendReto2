@@ -13,11 +13,11 @@ public class SalaService: ISalaService
     }
     public List<SalaDto> GetAll() => _SalaRepository.GetAll();
 
-    public Sala? Get(int id) => _SalaRepository.Get(id);
+    public SalaDto? Get(int id) => _SalaRepository.Get(id);
 
     public void Add(Sala Sala) => _SalaRepository.Add(Sala);
 
-    public void Update(Sala Sala) => _SalaRepository.Update(Sala);
+    public void Update(SalaDto Sala) => _SalaRepository.Update(Sala);
 
     public void Delete(int id) => _SalaRepository.Delete(id);
     public  List<SeatSalaDto> GetSeatsBySalaId(int salaId) => _SalaRepository.GetSeatsBySalaId(salaId);

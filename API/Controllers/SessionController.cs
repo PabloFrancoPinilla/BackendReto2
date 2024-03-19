@@ -60,7 +60,7 @@ namespace TeteSession.Controllers
             var existingSession = _SessionService.Get(id);
             if (existingSession == null)
                 return NotFound();
-                existingSession.ObraId = Session.ObraId;
+                existingSession.Obra.Id = Session.ObraId;
                 existingSession.SalaId = Session.SalaId;
                 existingSession.Date = Session.Date;
 

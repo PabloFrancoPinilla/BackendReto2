@@ -5,9 +5,9 @@ using TeatroBack.Models;
 public interface IObraService
 {
     List<ObraDto> GetAll();
-    Obra? Get(int id);
+    ObraDto? Get(int id);
     void Add(Obra obra);
-    void Update(Obra obra);
+    void Update(ObraDto obra);
     void Delete(int id);
 
     List<SessionObraDto> GetSessionsByObraId(int obraId);

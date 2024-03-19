@@ -13,11 +13,11 @@ public class SeatService: ISeatService
     }
     public List<SeatDto> GetAll() => _SeatRepository.GetAll();
 
-    public Seat? Get(int id) => _SeatRepository.Get(id);
+    public SeatDto? Get(int id) => _SeatRepository.Get(id);
 
     public void Add(Seat Seat) => _SeatRepository.Add(Seat);
 
-    public void Update(Seat Seat) => _SeatRepository.Update(Seat);
+    public void Update(SeatDto Seat) => _SeatRepository.Update(Seat);
 
     public void Delete(int id) => _SeatRepository.Delete(id);
     public  List<Seat> GetSeatsByUserId(int userId) => _SeatRepository.GetSeatsByUserId(userId);

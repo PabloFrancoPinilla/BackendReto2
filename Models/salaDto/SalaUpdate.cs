@@ -7,7 +7,7 @@ public class SalaUpdateDto
     public int Id { get; set; }
     public int Numero {get;set;}
     public int SessionId { get; set; }
-    public List<Seat> Seats {get; set;}
+    public List<SeatDto> Seats {get; set;}
 
 
 }

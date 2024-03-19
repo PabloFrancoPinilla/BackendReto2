@@ -35,11 +35,36 @@ namespace TeatroBack.Data
             }
         }
 
-        public Sala? Get(int salaId)
+        public SalaDto? Get(int salaId)
         {
             try
             {
-                return _context.Salas.FirstOrDefault(p => p.Id == salaId);
+                var salaDto = _context.Salas.Include(s => s.Seats) 
+                .FirstOrDefault(p => p.Id == salaId);
+                
+
+                if (salaDto != null)
+                {
+                    var sala = new SalaDto
+                    {
+                        Id = salaDto.Id,
+                        Numero = salaDto.Numero,
+                        SessionId = salaDto.SessionId,
+                        Seats = salaDto.Seats.Select(seat => new SeatDto
+                        {
+                            Id = seat.Id,
+                            Number = seat.Number,
+                            UserId = seat.UserId,
+                            State = seat.State,
+                            SalaId = seat.SalaId
+                        }).ToList()
+                    };
+                    return sala;
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception e)
             {
@@ -48,25 +73,41 @@ namespace TeatroBack.Data
             }
         }
 
-        public void Update(Sala sala)
+       public void Update(SalaDto salaDto)
+{
+    try
+    {
+        var existingSala = _context.Salas.Include(s => s.Seats).FirstOrDefault(s => s.Id == salaDto.Id);
+        if (existingSala != null)
         {
-            try
+            existingSala.Numero = salaDto.Numero;
+            existingSala.SessionId = salaDto.SessionId;
+
+            // Actualiza las plazas solo si es necesario
+            existingSala.Seats = salaDto.Seats.Select(seatDto => new Seat
             {
-                _context.Entry(sala).State = EntityState.Modified;
-                SaveChanges();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
-                throw;
-            }
+                Id = seatDto.Id,
+                Number = seatDto.Number,
+                UserId = seatDto.UserId,
+                State = seatDto.State,
+            }).ToList();
+
+            _context.Entry(existingSala).State = EntityState.Modified;
+            SaveChanges();
         }
+    }
+    catch (Exception e)
+    {
+        _logger.LogError(e, "Ocurrió un error en el método Update");
+        throw;
+    }
+}
 
         public void Delete(int salaId)
         {
             try
             {
-                var sala = Get(salaId);
+                var sala = _context.Salas.Find(salaId);
                 if (sala == null)
                 {
                     throw new KeyNotFoundException("sala not found.");
@@ -114,14 +155,14 @@ namespace TeatroBack.Data
             try
             {
                 var salas = _context.Salas
-                    .Include(s => s.Seats) 
+                    .Include(s => s.Seats)
                     .ToList();
 
                 var salaDtos = salas.Select(s => new SalaDto
                 {
                     Id = s.Id,
                     Numero = s.Numero,
-                    SessionId = s.SessionId, 
+                    SessionId = s.SessionId,
                     Seats = s.Seats.Select(seat => new SeatDto
                     {
                         Id = seat.Id,

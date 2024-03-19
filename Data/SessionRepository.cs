@@ -29,20 +29,39 @@ namespace TeatroBack.Data
             }
         }
 
-        public Session? Get(int SessionId)
+        public SessionDto? Get(int SessionId)
         {
             try{
-            return _context.Sessions.FirstOrDefault(p => p.Id == SessionId);
+            var sessionDto = _context.Sessions.Include(o => o.Obra)
+            .FirstOrDefault(p => p.Id == SessionId);
+            if (sessionDto != null){
+                var session = new SessionDto{
+                    Id = sessionDto.Id,
+                    Obra = new ObraDto{
+                    Id = sessionDto.Obra.Id,
+                    Name = sessionDto.Obra.Name,
+                    Image = sessionDto.Obra.Image,
+                    Duration = sessionDto.Obra.Duration,
+                    Genre = sessionDto.Obra.Genre
+                    }
+
+                };
+                return session;
+            }else{
+                return null;
+            }
             }catch(Exception e){
                 _logger.LogError(e,"An error ocurred while getting a session");
                 throw;
             }
         }
 
-        public void Update(Session Session)
+        public void Update(SessionDto Session)
         {
             try{
-            _context.Entry(Session).State = EntityState.Modified;
+                var _session = _context.Sessions.Find(Session.Id);
+                _session.Date = Session.Date;
+            _context.Entry(_session).State = EntityState.Modified;
             SaveChanges();
             }catch(Exception e){
                 _logger.LogError(e,"An error ocurred while updating");
@@ -52,7 +71,7 @@ namespace TeatroBack.Data
         public void Delete(int SessionId)
         {
             try{
-            var Session = Get(SessionId);
+            var Session = _context.Sessions.Find(SessionId);
             if (Session == null)
             {
                 throw new KeyNotFoundException("Session not found.");
