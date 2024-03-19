@@ -51,7 +51,7 @@ namespace TeteSala.Controllers
 
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Sala Sala)
+        public IActionResult Update(int id, SalaUpdateDto Sala)
         {
             if (id != Sala.Id)
                 return BadRequest();
@@ -59,8 +59,10 @@ namespace TeteSala.Controllers
             var existingSala = _SalaService.Get(id);
             if (existingSala == null)
                 return NotFound();
-
-            _SalaService.Update(Sala);
+            existingSala.Numero = Sala.Numero;
+            existingSala.SessionId = Sala.SessionId;
+            existingSala.Seats = Sala.Seats;
+            _SalaService.Update(existingSala);
 
             return NoContent();
         }

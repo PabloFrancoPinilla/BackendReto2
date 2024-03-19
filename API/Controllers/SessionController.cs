@@ -50,7 +50,7 @@ namespace TeteSession.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Session Session)
+        public IActionResult Update(int id, SessionUpdateDto Session)
         {
             if (id != Session.Id)
                 return BadRequest();
@@ -58,8 +58,11 @@ namespace TeteSession.Controllers
             var existingSession = _SessionService.Get(id);
             if (existingSession == null)
                 return NotFound();
+                existingSession.ObraId = Session.ObraId;
+                existingSession.SalaId = Session.SalaId;
+                existingSession.Date = Session.Date;
 
-            _SessionService.Update(Session);
+            _SessionService.Update(existingSession);
 
             return NoContent();
         }

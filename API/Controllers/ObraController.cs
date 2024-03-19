@@ -50,26 +50,27 @@ namespace TeteObra.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Obra Obra)
+        public IActionResult Update(int id, ObraUpdateDto obraDto)
         {
-            if (id != Obra.Id)
+            if (id != obraDto.Id)
                 return BadRequest();
 
             var existingObra = _ObraService.Get(id);
             if (existingObra == null)
                 return NotFound();
 
-            // Actualiza solo las propiedades de la obra
-            existingObra.Name = Obra.Name;
-            existingObra.Image = Obra.Image;
-            existingObra.Duration = Obra.Duration;
-            existingObra.Genre = Obra.Genre;
-            existingObra.Sessions = Obra.Sessions;
+            existingObra.Name = obraDto.Name;
+            existingObra.Image = obraDto.Image;
+            existingObra.Genre = obraDto.Genre;
+            existingObra.Duration = obraDto.Duration;
+            existingObra.Sessions = obraDto.Sessions;
 
             _ObraService.Update(existingObra);
 
             return NoContent();
         }
+
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

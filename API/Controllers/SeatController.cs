@@ -52,7 +52,7 @@ namespace TeteSeat.Controllers
 
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Seat Seat)
+        public IActionResult Update(int id, SeatUpdateDto Seat)
         {
             if (id != Seat.Id)
                 return BadRequest();
@@ -60,8 +60,13 @@ namespace TeteSeat.Controllers
             var existingSeat = _SeatService.Get(id);
             if (existingSeat == null)
                 return NotFound();
+                existingSeat.Number = Seat.Number;
+                existingSeat.State = Seat.State;
+                existingSeat.UserId = Seat.UserId;
+                existingSeat.SalaId = Seat.SalaId;
+            
 
-            _SeatService.Update(Seat);
+            _SeatService.Update(existingSeat);
 
             return NoContent();
         }

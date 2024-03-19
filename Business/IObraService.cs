@@ -11,4 +11,5 @@ public interface IObraService
     void Delete(int id);
 
     List<SessionObraDto> GetSessionsByObraId(int obraId);
+    
 }
