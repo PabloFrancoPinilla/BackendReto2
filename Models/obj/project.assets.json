@@ -8,20 +8,20 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\franc\\.nuget\\packages\\": {}
+    "C:\\Users\\espec\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+      "projectUniqueName": "D:\\BackendReto2\\Models\\TeatroBack.Models.csproj",
       "projectName": "TeatroBack.Models",
-      "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\TeatroBack.Models.csproj",
-      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Models\\obj\\",
+      "projectPath": "D:\\BackendReto2\\Models\\TeatroBack.Models.csproj",
+      "packagesPath": "C:\\Users\\espec\\.nuget\\packages\\",
+      "outputPath": "D:\\BackendReto2\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\Desktop\\BackendReto2\\NuGet.Config",
-        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "D:\\BackendReto2\\NuGet.Config",
+        "C:\\Users\\espec\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

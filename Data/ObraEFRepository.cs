@@ -46,11 +46,13 @@ namespace TeatroBack.Data
                         Image = obraDto.Image,
                         Duration = obraDto.Duration,
                         Genre = obraDto.Genre
-                        
+
                     };
 
                     return obra;
-                }else {
+                }
+                else
+                {
                     return null;
                 }
             }
@@ -68,7 +70,7 @@ namespace TeatroBack.Data
                 var _obra = _context.Obras.Find(obra.Id);
                 _obra.Name = obra.Name;
                 _obra.Image = obra.Image;
-                _obra.Duration = obra.Duration; 
+                _obra.Duration = obra.Duration;
                 _obra.Genre = obra.Genre;
                 _context.Entry(_obra).State = EntityState.Modified;
                 SaveChanges();
@@ -113,6 +115,7 @@ namespace TeatroBack.Data
                 {
                     Id = o.Id,
                     Date = o.Date,
+                    SalaNumber = o.Sala.Number
                 })
                 .ToList();
                 return sessions;

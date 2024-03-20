@@ -6065,20 +6065,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\franc\\.nuget\\packages\\": {}
+    "C:\\Users\\espec\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj",
+      "projectUniqueName": "D:\\BackendReto2\\API\\TeatroBack.API.csproj",
       "projectName": "TeatroBack.API",
-      "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\TeatroBack.API.csproj",
-      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\API\\obj\\",
+      "projectPath": "D:\\BackendReto2\\API\\TeatroBack.API.csproj",
+      "packagesPath": "C:\\Users\\espec\\.nuget\\packages\\",
+      "outputPath": "D:\\BackendReto2\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\Desktop\\BackendReto2\\NuGet.Config",
-        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "D:\\BackendReto2\\NuGet.Config",
+        "C:\\Users\\espec\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -6090,8 +6090,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
-              "projectPath": "C:\\Users\\franc\\Desktop\\BackendReto2\\Business\\TeatroBack.Business.csproj"
+            "D:\\BackendReto2\\Business\\TeatroBack.Business.csproj": {
+              "projectPath": "D:\\BackendReto2\\Business\\TeatroBack.Business.csproj"
             }
           }
         }

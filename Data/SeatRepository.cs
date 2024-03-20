@@ -14,7 +14,7 @@ namespace TeatroBack.Data
         private readonly ILogger<SeatRepository> _logger;
 
 
-        public SeatRepository(ObraContext context,ILogger<SeatRepository> logger)
+        public SeatRepository(ObraContext context, ILogger<SeatRepository> logger)
         {
             _context = context;
             _logger = logger;
@@ -39,9 +39,10 @@ namespace TeatroBack.Data
         {
             try
             {
-                var seatDto =  _context.Seats.FirstOrDefault(p => p.Id == SeatId);
-                if( seatDto != null){
-                    var seat = new SeatDto 
+                var seatDto = _context.Seats.FirstOrDefault(p => p.Id == SeatId);
+                if (seatDto != null)
+                {
+                    var seat = new SeatDto
                     {
                         Id = seatDto.Id,
                         Number = seatDto.Number,
@@ -50,7 +51,9 @@ namespace TeatroBack.Data
                         SalaId = seatDto.SalaId
                     };
                     return seat;
-                }else {
+                }
+                else
+                {
                     return null;
                 }
             }
@@ -110,12 +113,14 @@ namespace TeatroBack.Data
                 throw;
             }
         }
-          public List<SeatSalaDto>GetSeatsBySalaId(int salaId){
+        public List<SeatSalaDto> GetSeatsBySalaId(int salaId)
+        {
 
             try
             {
                 var seats = _context.Seats.Where(s => s.SalaId == salaId)
-                .Select(s => new SeatSalaDto{
+                .Select(s => new SeatSalaDto
+                {
                     Id = s.Id,
                     Number = s.Number,
                     State = s.State,
@@ -140,7 +145,7 @@ namespace TeatroBack.Data
         {
             try
             {
-                var seat = _context.Seats 
+                var seat = _context.Seats
                     .Include(s => s.User)
                     .ToList();
 
@@ -151,7 +156,7 @@ namespace TeatroBack.Data
                     Number = s.Number,
                     UserId = s.UserId,
                     SalaId = s.SalaId
-                    
+
                 }).ToList();
 
                 return seatDto;

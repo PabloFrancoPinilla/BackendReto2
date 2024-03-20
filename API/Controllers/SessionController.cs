@@ -43,7 +43,7 @@ namespace TeteSession.Controllers
                 ObraId = SessionPostDto.ObraId,
                 SalaId = SessionPostDto.SalaId,
                 Date = SessionPostDto.Date
-                
+
             };
 
 
@@ -60,8 +60,8 @@ namespace TeteSession.Controllers
             var existingSession = _SessionService.Get(id);
             if (existingSession == null)
                 return NotFound();
-                existingSession.Obra.Id = Session.ObraId;
-                existingSession.Date = Session.Date;
+            existingSession.Obra.Id = Session.ObraId;
+            existingSession.Date = Session.Date;
 
             _SessionService.Update(existingSession);
 

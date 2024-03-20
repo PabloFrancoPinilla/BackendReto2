@@ -54,9 +54,9 @@ namespace TeatroBack.Data
                         },
                         Date = sessionDto.Date,
                         SalaNumber = sessionDto.Sala.Number
-                        
-                        
-                        
+
+
+
 
                     };
                     return session;
@@ -117,12 +117,14 @@ namespace TeatroBack.Data
             {
                 var session = _context.Sessions
                 .Include(s => s.Obra)
+                .Include(sa => sa.Sala)
                 .ToList();
 
                 var sessionDto = session.Select(s => new SessionDto
                 {
                     Id = s.Id,
                     Date = s.Date,
+                    SalaNumber = s.Sala.Number,
                     Obra = new ObraDto
                     {
                         Id = s.Obra.Id,
@@ -132,7 +134,6 @@ namespace TeatroBack.Data
                         Genre = s.Obra.Genre
                     }
                 }).ToList();
-
                 return sessionDto;
             }
             catch (Exception e)
