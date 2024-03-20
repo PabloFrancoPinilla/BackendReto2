@@ -141,7 +141,7 @@ namespace TeatroBack.Data
             try
             {
                 var seat = _context.Seats
-                    .Include(s => s.SalaId)
+                    
                     .Include(s => s.User)
                     .ToList();
 
