@@ -9,3 +9,14 @@ C:\Users\franc\Desktop\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.dl
 C:\Users\franc\Desktop\BackendReto2\Models\obj\Debug\net7.0\refint\TeatroBack.Models.dll
 C:\Users\franc\Desktop\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.pdb
 C:\Users\franc\Desktop\BackendReto2\Models\obj\Debug\net7.0\ref\TeatroBack.Models.dll
+D:\BackendReto2\Models\bin\Debug\net7.0\TeatroBack.Models.deps.json
+D:\BackendReto2\Models\bin\Debug\net7.0\TeatroBack.Models.dll
+D:\BackendReto2\Models\bin\Debug\net7.0\TeatroBack.Models.pdb
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.AssemblyInfoInputs.cache
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.AssemblyInfo.cs
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.csproj.CoreCompileInputs.cache
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.dll
+D:\BackendReto2\Models\obj\Debug\net7.0\refint\TeatroBack.Models.dll
+D:\BackendReto2\Models\obj\Debug\net7.0\TeatroBack.Models.pdb
+D:\BackendReto2\Models\obj\Debug\net7.0\ref\TeatroBack.Models.dll

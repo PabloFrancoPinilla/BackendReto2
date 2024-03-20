@@ -39,9 +39,9 @@ namespace TeatroBack.Data
         {
             try
             {
-                var salaDto = _context.Salas.Include(s => s.Seats) 
+                var salaDto = _context.Salas.Include(s => s.Seats)
                 .FirstOrDefault(p => p.Id == salaId);
-                
+
 
                 if (salaDto != null)
                 {
@@ -73,35 +73,35 @@ namespace TeatroBack.Data
             }
         }
 
-       public void Update(SalaDto salaDto)
-{
-    try
-    {
-        var existingSala = _context.Salas.Include(s => s.Seats).FirstOrDefault(s => s.Id == salaDto.Id);
-        if (existingSala != null)
+        public void Update(SalaDto salaDto)
         {
-            existingSala.Number = salaDto.Number;
-            existingSala.SessionId = salaDto.SessionId;
-
-            // Actualiza las plazas solo si es necesario
-            existingSala.Seats = salaDto.Seats.Select(seatDto => new Seat
+            try
             {
-                Id = seatDto.Id,
-                Number = seatDto.Number,
-                UserId = seatDto.UserId,
-                State = seatDto.State,
-            }).ToList();
+                var existingSala = _context.Salas.Include(s => s.Seats).FirstOrDefault(s => s.Id == salaDto.Id);
+                if (existingSala != null)
+                {
+                    existingSala.Number = salaDto.Number;
+                    existingSala.SessionId = salaDto.SessionId;
 
-            _context.Entry(existingSala).State = EntityState.Modified;
-            SaveChanges();
+                    // Actualiza las plazas solo si es necesario
+                    existingSala.Seats = salaDto.Seats.Select(seatDto => new Seat
+                    {
+                        Id = seatDto.Id,
+                        Number = seatDto.Number,
+                        UserId = seatDto.UserId,
+                        State = seatDto.State,
+                    }).ToList();
+
+                    _context.Entry(existingSala).State = EntityState.Modified;
+                    SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Ocurrió un error en el método Update");
+                throw;
+            }
         }
-    }
-    catch (Exception e)
-    {
-        _logger.LogError(e, "Ocurrió un error en el método Update");
-        throw;
-    }
-}
 
         public void Delete(int salaId)
         {
