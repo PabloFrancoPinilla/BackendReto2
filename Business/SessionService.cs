@@ -20,6 +20,7 @@ public class SessionService : ISessionService
     public void Update(SessionDto Session) => _SessionRepository.Update(Session);
 
     public void Delete(int id) => _SessionRepository.Delete(id);
+    public List<SeatSalaDto> GetSeatsBySessionId(int sessionId) => _SessionRepository.GetSeatsBySessionId(sessionId);
 
 }
 

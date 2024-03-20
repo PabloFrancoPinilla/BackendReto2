@@ -110,18 +110,6 @@ namespace TeatroBack.Data
                 throw;
             }
         }
-          public List<Seat>GetSeatsBySession(int number){
-
-            try
-            {
-                return _context.Seats.Where(s => s.Number == number).ToList();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
-                throw;
-            }
-        }
           public List<SeatSalaDto>GetSeatsBySalaId(int salaId){
 
             try

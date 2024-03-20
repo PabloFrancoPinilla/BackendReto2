@@ -42,6 +42,39 @@ namespace TeatroBack.Data
                .WithMany(s => s.Seats)
                .HasForeignKey(s => s.SalaId)
                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Obra>().HasData(
+                new Obra { Id = 1, Name = "El misterio del faro", Image = "faro.jpg", Duration = "2 horas", Genre = "Misterio" },
+                new Obra { Id = 2, Name = "La princesa perdida", Image = "princesa.jpg", Duration = "1 hora y 30 minutos", Genre = "Fantasía" },
+                new Obra { Id = 3, Name = "El tesoro del pirata", Image = "pirata.jpg", Duration = "2 horas y 15 minutos", Genre = "Aventura" },
+                new Obra { Id = 4, Name = "La mansión encantada", Image = "mansión.jpg", Duration = "2 horas", Genre = "Suspenso" },
+                new Obra { Id = 5, Name = "El circo de los sueños", Image = "circo.jpg", Duration = "1 hora y 45 minutos", Genre = "Drama" },
+                new Obra { Id = 6, Name = "El secreto de la montaña", Image = "montaña.jpg", Duration = "2 horas y 30 minutos", Genre = "Aventura" },
+                new Obra { Id = 7, Name = "La isla misteriosa", Image = "isla.jpg", Duration = "2 horas", Genre = "Misterio" },
+                new Obra { Id = 8, Name = "El príncipe y la doncella", Image = "principe.jpg", Duration = "1 hora y 30 minutos", Genre = "Romance" },
+                new Obra { Id = 9, Name = "La leyenda del caballero", Image = "caballero.jpg", Duration = "2 horas y 15 minutos", Genre = "Fantasía" },
+                new Obra { Id = 10, Name = "La casa de los secretos", Image = "casa.jpg", Duration = "2 horas", Genre = "Suspenso" }
+);
+            modelBuilder.Entity<Sala>().HasData(
+                 new Sala { Id = 1, Numero = 1, SessionId = 1 }
+                 );
+
+
+            for (int i = 1; i <= 50; i++)
+            {
+                modelBuilder.Entity<Seat>().HasData(
+                    new Seat { Id = i, Number = i, State = "Available", SalaId = 1 }
+                );
+            }
+
+            
+            var fechaSesion = DateTime.Now.AddDays(7); // Ejemplo de fecha: 7 días después de hoy
+            for (int i = 1; i <= 10; i++)
+            {
+                modelBuilder.Entity<Session>().HasData(
+                    new Session { Id = i, ObraId = i, Date = fechaSesion, SalaId = 1 }
+                );
+            }
+
         }
 
 

@@ -9,7 +9,6 @@ public interface ISeatService{
     void Update(SeatDto Seat);
     void Delete(int id);
     List<Seat> GetSeatsByUserId(int userId);
-    List<Seat>  GetSeatsBySession(int number);
     List<SeatSalaDto> GetSeatsBySalaId(int salaId);
     
 

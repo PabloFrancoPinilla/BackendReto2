@@ -7,5 +7,6 @@ public interface ISessionRepository
     void Add(Session Session);
     void Update(SessionDto Session);
     void Delete(int id);
+    List<SeatSalaDto> GetSeatsBySessionId(int sessionId);
 
 }
