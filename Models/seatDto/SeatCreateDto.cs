@@ -11,7 +11,7 @@ public class SeatCreateDto
     [Required]
     public int SalaId { get; set; }
 
-    public int? UserId { get; set; }
+    public int? UserId { get; set; } = 0;
 
     public string State { get; set; }
 

@@ -48,7 +48,7 @@ namespace TeatroBack.Data
                     var sala = new SalaDto
                     {
                         Id = salaDto.Id,
-                        Numero = salaDto.Numero,
+                        Number = salaDto.Number,
                         SessionId = salaDto.SessionId,
                         Seats = salaDto.Seats.Select(seat => new SeatDto
                         {
@@ -80,7 +80,7 @@ namespace TeatroBack.Data
         var existingSala = _context.Salas.Include(s => s.Seats).FirstOrDefault(s => s.Id == salaDto.Id);
         if (existingSala != null)
         {
-            existingSala.Numero = salaDto.Numero;
+            existingSala.Number = salaDto.Number;
             existingSala.SessionId = salaDto.SessionId;
 
             // Actualiza las plazas solo si es necesario
@@ -161,7 +161,7 @@ namespace TeatroBack.Data
                 var salaDtos = salas.Select(s => new SalaDto
                 {
                     Id = s.Id,
-                    Numero = s.Numero,
+                    Number = s.Number,
                     SessionId = s.SessionId,
                     Seats = s.Seats.Select(seat => new SeatDto
                     {

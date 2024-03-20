@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 public class SalaCreateDto
 {
    
-    public int Numero {get;set;}
+    public int Number {get;set;}
     public int SessionId { get; set; }
 
     

@@ -13,6 +13,7 @@ namespace TeteSeat.Controllers
         public SeatController(ISeatService SeatService)
         {
             _SeatService = SeatService;
+            
         }
 
         [HttpGet]

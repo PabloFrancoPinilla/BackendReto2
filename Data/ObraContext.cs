@@ -55,14 +55,14 @@ namespace TeatroBack.Data
                 new Obra { Id = 10, Name = "La casa de los secretos", Image = "casa.jpg", Duration = "2 horas", Genre = "Suspenso" }
 );
             modelBuilder.Entity<Sala>().HasData(
-                 new Sala { Id = 1, Numero = 1, SessionId = 1 }
+                 new Sala { Id = 1,  Number = 1, SessionId = 1 }
                  );
 
 
             for (int i = 1; i <= 50; i++)
             {
                 modelBuilder.Entity<Seat>().HasData(
-                    new Seat { Id = i, Number = i, State = "Available", SalaId = 1 }
+                    new Seat { Id = i, Number = i, State = "Available", SalaId = 1,  }
                 );
             }
 

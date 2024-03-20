@@ -41,7 +41,7 @@ namespace TeteSala.Controllers
 
             var Sala = new Sala
             {
-                Numero = SalaCreateDto.Numero,
+                Number = SalaCreateDto.Number,
                 SessionId = SalaCreateDto.SessionId
             };
             _SalaService.Add(Sala);
@@ -59,7 +59,7 @@ namespace TeteSala.Controllers
             var existingSala = _SalaService.Get(id);
             if (existingSala == null)
                 return NotFound();
-            existingSala.Numero = Sala.Numero;
+            existingSala.Number = Sala.Number;
             existingSala.SessionId = Sala.SessionId;
             existingSala.Seats = Sala.Seats;
             _SalaService.Update(existingSala);

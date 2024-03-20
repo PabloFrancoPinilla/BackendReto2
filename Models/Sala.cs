@@ -8,7 +8,7 @@ public class Sala
     [Key]
     public int Id { get; set; }
 
-    public int Numero { get; set; }
+    public int Number { get; set; }
 
     public int SessionId { get; set; }
 
