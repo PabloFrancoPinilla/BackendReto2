@@ -37,6 +37,7 @@ namespace TeatroBack.Data
             try
             {
                 var sessionDto = _context.Sessions.Include(o => o.Obra)
+                .Include(s => s.Sala)
                 .FirstOrDefault(p => p.Id == SessionId);
                 if (sessionDto != null)
                 {
@@ -51,7 +52,11 @@ namespace TeatroBack.Data
                             Duration = sessionDto.Obra.Duration,
                             Genre = sessionDto.Obra.Genre
                         },
-                        Date = sessionDto.Date
+                        Date = sessionDto.Date,
+                        SalaNumber = sessionDto.Sala.Number
+                        
+                        
+                        
 
                     };
                     return session;

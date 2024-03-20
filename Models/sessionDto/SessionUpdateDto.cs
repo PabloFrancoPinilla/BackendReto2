@@ -8,7 +8,7 @@ public class SessionUpdateDto
     public int Id { get; set; }
     public int ObraId { get; set; }
     public DateTime Date { get; set; }
-    public int SalaId { get; set; }
+   
     public SessionUpdateDto() { }
 
 }

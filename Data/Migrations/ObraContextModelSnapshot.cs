@@ -195,400 +195,350 @@ namespace TeatroBack.Data.Migrations
                             Id = 1,
                             Number = 1,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 2,
                             Number = 2,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 3,
                             Number = 3,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 4,
                             Number = 4,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 5,
                             Number = 5,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 6,
                             Number = 6,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 7,
                             Number = 7,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 8,
                             Number = 8,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 9,
                             Number = 9,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 10,
                             Number = 10,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 11,
                             Number = 11,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 12,
                             Number = 12,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 13,
                             Number = 13,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 14,
                             Number = 14,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 15,
                             Number = 15,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 16,
                             Number = 16,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 17,
                             Number = 17,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 18,
                             Number = 18,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 19,
                             Number = 19,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 20,
                             Number = 20,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 21,
                             Number = 21,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 22,
                             Number = 22,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 23,
                             Number = 23,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 24,
                             Number = 24,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 25,
                             Number = 25,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 26,
                             Number = 26,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 27,
                             Number = 27,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 28,
                             Number = 28,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 29,
                             Number = 29,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 30,
                             Number = 30,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 31,
                             Number = 31,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 32,
                             Number = 32,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 33,
                             Number = 33,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 34,
                             Number = 34,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 35,
                             Number = 35,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 36,
                             Number = 36,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 37,
                             Number = 37,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 38,
                             Number = 38,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 39,
                             Number = 39,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 40,
                             Number = 40,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 41,
                             Number = 41,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 42,
                             Number = 42,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 43,
                             Number = 43,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 44,
                             Number = 44,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 45,
                             Number = 45,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 46,
                             Number = 46,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 47,
                             Number = 47,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 48,
                             Number = 48,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 49,
                             Number = 49,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         },
                         new
                         {
                             Id = 50,
                             Number = 50,
                             SalaId = 1,
-                            State = "Available",
-                            UserId = 0
+                            State = "Available"
                         });
                 });
 
@@ -621,70 +571,70 @@ namespace TeatroBack.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 1,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 2,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 3,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 4,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 5,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 6,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 7,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 7,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 8,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 8,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 9,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 9,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 10,
-                            Date = new DateTime(2024, 3, 27, 18, 24, 22, 336, DateTimeKind.Local).AddTicks(7715),
+                            Date = new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777),
                             ObraId = 10,
                             SalaId = 1
                         });

@@ -61,7 +61,6 @@ namespace TeteSession.Controllers
             if (existingSession == null)
                 return NotFound();
                 existingSession.Obra.Id = Session.ObraId;
-                existingSession.SalaId = Session.SalaId;
                 existingSession.Date = Session.Date;
 
             _SessionService.Update(existingSession);

@@ -8,11 +8,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TeatroBack.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Context : Migration
+    public partial class Bartola : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.RenameColumn(
+                name: "Numero",
+                table: "Salas",
+                newName: "Number");
+
             migrationBuilder.InsertData(
                 table: "Obras",
                 columns: new[] { "Id", "Duration", "Genre", "Image", "Name" },
@@ -32,7 +37,7 @@ namespace TeatroBack.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Salas",
-                columns: new[] { "Id", "Numero", "SessionId" },
+                columns: new[] { "Id", "Number", "SessionId" },
                 values: new object[] { 1, 1, 1 });
 
             migrationBuilder.InsertData(
@@ -97,16 +102,16 @@ namespace TeatroBack.Data.Migrations
                 columns: new[] { "Id", "Date", "ObraId", "SalaId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 1, 1 },
-                    { 2, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 2, 1 },
-                    { 3, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 3, 1 },
-                    { 4, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 4, 1 },
-                    { 5, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 5, 1 },
-                    { 6, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 6, 1 },
-                    { 7, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 7, 1 },
-                    { 8, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 8, 1 },
-                    { 9, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 9, 1 },
-                    { 10, new DateTime(2024, 3, 27, 10, 4, 21, 5, DateTimeKind.Local).AddTicks(7674), 10, 1 }
+                    { 1, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 1, 1 },
+                    { 2, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 2, 1 },
+                    { 3, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 3, 1 },
+                    { 4, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 4, 1 },
+                    { 5, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 5, 1 },
+                    { 6, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 6, 1 },
+                    { 7, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 7, 1 },
+                    { 8, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 8, 1 },
+                    { 9, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 9, 1 },
+                    { 10, new DateTime(2024, 3, 27, 20, 45, 58, 729, DateTimeKind.Local).AddTicks(2777), 10, 1 }
                 });
         }
 
@@ -467,6 +472,11 @@ namespace TeatroBack.Data.Migrations
                 table: "Salas",
                 keyColumn: "Id",
                 keyValue: 1);
+
+            migrationBuilder.RenameColumn(
+                name: "Number",
+                table: "Salas",
+                newName: "Numero");
         }
     }
 }

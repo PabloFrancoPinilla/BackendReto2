@@ -7,8 +7,7 @@ public class SessionDto
     public int Id { get; set; }
     public ObraDto Obra { get; set; }
     public DateTime Date{get; set;}
-
-    public int SalaId {get; set;}
+    public int SalaNumber {get; set;}
     public SessionDto() { }
 
 }
