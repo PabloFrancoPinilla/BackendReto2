@@ -6,7 +6,7 @@
     {
         [Key]   
         public int ObraId { get; set; }
-        public int SalaId {get; set;}
+        public int SalaId{get; set;}
 
         public DateTime Date{get; set;}
 

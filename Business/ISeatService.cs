@@ -9,7 +9,7 @@ public interface ISeatService{
     void Update(SeatDto Seat);
     void Delete(int id);
     List<Seat> GetSeatsByUserId(int userId);
-    List<SeatSalaDto> GetSeatsBySalaId(int salaId);
+    List<SeatDto> GetSeatsBySalaId(int salaId);
     
 
 }

@@ -11,11 +11,18 @@ namespace TeatroBack.Data
     {
         private readonly ObraContext _context;
         private readonly ILogger<SessionRepository> _logger;
+        private readonly ISeatRepository _seatRepository;
+        private readonly ISalaRepository _salaRepository;
+       
 
-        public SessionRepository(ObraContext context, ILogger<SessionRepository> logger)
+        public SessionRepository(ObraContext context, ILogger<SessionRepository> logger, ISeatRepository seatRepository, ISalaRepository salaRepository )
         {
             _context = context;
             _logger = logger;
+            _seatRepository= seatRepository;
+            _salaRepository = salaRepository;
+
+            
         }
 
         public void Add(Session Session)
@@ -162,6 +169,55 @@ namespace TeatroBack.Data
             catch (Exception e)
             {
                 _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                throw;
+            }
+        }
+        public SessionRepository(ObraContext context)
+        {
+            _context = context;
+        }
+
+        public void UpdateSeats(int sessionId, List<SeatUpdateDto> updatedSeats)
+        {
+            try
+            {
+
+                var session = _context.Sessions.Find(sessionId);
+
+                if (session == null)
+                {
+                    throw new ArgumentException("Sesión no encontrada.");
+                }
+
+                var sala = _context.Salas.Find(session.SalaId);
+
+                if (sala == null)
+                {
+                    throw new ArgumentException("Sala no encontrada.");
+                }
+         
+                var seatsInSala = _seatRepository.GetSeatsBySalaId(session.SalaId);
+           
+                foreach (var updatedSeat in updatedSeats)
+                {
+                    var existingSeat = seatsInSala.FirstOrDefault(s => s.Id == updatedSeat.Id);
+
+                    if (existingSeat != null)
+                    {
+                        existingSeat.Number = updatedSeat.Number;
+                        existingSeat.UserId = updatedSeat.UserId;
+                        existingSeat.State = updatedSeat.State;
+
+                        _seatRepository.Update(existingSeat);
+                    }
+                }
+
+              
+                    SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Se produjo un error al actualizar los asientos de la sesión", ex);
                 throw;
             }
         }

@@ -14,7 +14,7 @@ public class SeatDto
     public int? UserId { get; set; }
 
     public string State { get; set; }
-    public int? SalaId {get; set;}
+
 
     
 

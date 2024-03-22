@@ -8,5 +8,6 @@ public interface ISessionRepository
     void Update(SessionDto Session);
     void Delete(int id);
     List<SeatSalaDto> GetSeatsBySessionId(int sessionId);
+    public void UpdateSeats(int sessionId, List<SeatUpdateDto> updatedSeats);
 
 }

@@ -48,7 +48,7 @@ namespace TeatroBack.Data
                         Number = seatDto.Number,
                         UserId = seatDto.UserId,
                         State = seatDto.State,
-                        SalaId = seatDto.SalaId
+                       
                     };
                     return seat;
                 }
@@ -113,13 +113,13 @@ namespace TeatroBack.Data
                 throw;
             }
         }
-        public List<SeatSalaDto> GetSeatsBySalaId(int salaId)
+        public List<SeatDto> GetSeatsBySalaId(int salaId)
         {
 
             try
             {
                 var seats = _context.Seats.Where(s => s.SalaId == salaId)
-                .Select(s => new SeatSalaDto
+                .Select(s => new SeatDto
                 {
                     Id = s.Id,
                     Number = s.Number,
@@ -155,7 +155,7 @@ namespace TeatroBack.Data
                     State = s.State,
                     Number = s.Number,
                     UserId = s.UserId,
-                    SalaId = s.SalaId
+                    
 
                 }).ToList();
 

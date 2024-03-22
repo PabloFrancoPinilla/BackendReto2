@@ -8,6 +8,7 @@ public class SessionDto
     public ObraDto Obra { get; set; }
     public DateTime Date{get; set;}
     public int SalaNumber {get; set;}
+  
     public SessionDto() { }
 
 }

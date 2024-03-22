@@ -43,7 +43,7 @@ namespace TeteSession.Controllers
                 ObraId = SessionPostDto.ObraId,
                 SalaId = SessionPostDto.SalaId,
                 Date = SessionPostDto.Date
-
+                
             };
 
 
@@ -60,8 +60,8 @@ namespace TeteSession.Controllers
             var existingSession = _SessionService.Get(id);
             if (existingSession == null)
                 return NotFound();
-            existingSession.Obra.Id = Session.ObraId;
-            existingSession.Date = Session.Date;
+                existingSession.Obra.Id = Session.ObraId;
+                existingSession.Date = Session.Date;
 
             _SessionService.Update(existingSession);
 
@@ -86,6 +86,20 @@ namespace TeteSession.Controllers
         {
             var seats = _SessionService.GetSeatsBySessionId(sessionId);
             return Ok(seats);
+        }
+        [HttpPut("{sessionId}/seat")]
+        public IActionResult UpdateSeats(int sessionId, [FromBody] SessionSeatsUpdateDto sessionSeatsUpdateDto)
+        {
+            try
+            {
+                _SessionService.UpdateSeats(sessionId, sessionSeatsUpdateDto.Seats);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                return NotFound(e);
+            }
+            
         }
 
         /* [HttpGet("{salaId}/seatsById")]

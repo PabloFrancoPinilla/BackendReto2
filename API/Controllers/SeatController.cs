@@ -64,7 +64,7 @@ namespace TeteSeat.Controllers
                 existingSeat.Number = Seat.Number;
                 existingSeat.State = Seat.State;
                 existingSeat.UserId = Seat.UserId;
-                existingSeat.SalaId = Seat.SalaId;
+             
             
 
             _SeatService.Update(existingSeat);

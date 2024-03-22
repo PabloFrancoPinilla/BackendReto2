@@ -8,5 +8,5 @@ public interface ISeatRepository
     void Update(SeatDto seat);
     void Delete(int id);
     List<Seat> GetSeatsByUserId(int userId);
-    List<SeatSalaDto> GetSeatsBySalaId(int sessionId);
+    List<SeatDto> GetSeatsBySalaId(int sessionId);
 }
