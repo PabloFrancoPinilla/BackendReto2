@@ -12,7 +12,7 @@ public class SeatCreateDto
     public int SalaId { get; set; }
 
     public int? UserId { get; set; } = 0;
-
+    public double Price { get; set; }
     public string State { get; set; }
 
     public SeatCreateDto() { }

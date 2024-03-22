@@ -62,7 +62,7 @@ namespace TeatroBack.Data
             for (int i = 1; i <= 50; i++)
             {
                 modelBuilder.Entity<Seat>().HasData(
-                    new Seat { Id = i, Number = i, State = "Available", SalaId = 1,  }
+                    new Seat { Id = i, Number = i, Price = 9.99 , State = "Available", SalaId = 1,  }
                 );
             }
 

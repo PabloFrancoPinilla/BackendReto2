@@ -47,8 +47,9 @@ namespace TeatroBack.Data
                         Id = seatDto.Id,
                         Number = seatDto.Number,
                         UserId = seatDto.UserId,
+                        Price = seatDto.Price,
                         State = seatDto.State,
-                       
+
                     };
                     return seat;
                 }
@@ -70,6 +71,7 @@ namespace TeatroBack.Data
             {
                 var _seat = _context.Seats.Find(Seat.Id);
                 _seat.Number = Seat.Number;
+                _seat.Price = Seat.Price;
                 _seat.State = Seat.State;
                 _seat.UserId = Seat.UserId;
                 _context.Entry(_seat).State = EntityState.Modified;
@@ -123,6 +125,7 @@ namespace TeatroBack.Data
                 {
                     Id = s.Id,
                     Number = s.Number,
+                    Price = s.Price,
                     State = s.State,
                     UserId = s.UserId
                 })
@@ -152,10 +155,11 @@ namespace TeatroBack.Data
                 var seatDto = seat.Select(s => new SeatDto
                 {
                     Id = s.Id,
+                    Price = s.Price,
                     State = s.State,
                     Number = s.Number,
                     UserId = s.UserId,
-                    
+
 
                 }).ToList();
 

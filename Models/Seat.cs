@@ -10,6 +10,9 @@ public class Seat
     [Required]
     public int Number { get; set; }
     [Required]
+
+    public double Price { get; set; }
+
     public string State { get; set; }
     //Clave Foranea User
     public int? UserId { get; set; }

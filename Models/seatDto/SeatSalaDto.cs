@@ -13,9 +13,10 @@ public class SeatSalaDto
 
     public int? UserId { get; set; }
 
+    public double Price { get; set; }
     public string State { get; set; }
 
-    
+
 
 
     public SeatSalaDto() { }

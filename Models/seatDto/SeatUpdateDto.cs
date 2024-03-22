@@ -10,6 +10,8 @@ public class SeatUpdateDto
     [Required]
     public int Number { get; set; }
     [Required]
+
+    public double Price { get; set; }
     public string State { get; set; }
     public int? UserId { get; set; }
     public int SalaId { get; set; }

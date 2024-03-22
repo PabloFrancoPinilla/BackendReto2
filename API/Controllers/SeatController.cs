@@ -13,7 +13,7 @@ namespace TeteSeat.Controllers
         public SeatController(ISeatService SeatService)
         {
             _SeatService = SeatService;
-            
+
         }
 
         [HttpGet]
@@ -43,6 +43,7 @@ namespace TeteSeat.Controllers
             {
                 Number = SeatCreateDto.Number,
                 SalaId = SeatCreateDto.SalaId,
+                Price = SeatCreateDto.Price,
                 UserId = SeatCreateDto.UserId,
                 State = SeatCreateDto.State
             };
@@ -61,11 +62,10 @@ namespace TeteSeat.Controllers
             var existingSeat = _SeatService.Get(id);
             if (existingSeat == null)
                 return NotFound();
-                existingSeat.Number = Seat.Number;
-                existingSeat.State = Seat.State;
-                existingSeat.UserId = Seat.UserId;
-             
-            
+            existingSeat.Number = Seat.Number;
+            existingSeat.Price = Seat.Price;
+            existingSeat.State = Seat.State;
+            existingSeat.UserId = Seat.UserId;
 
             _SeatService.Update(existingSeat);
 

@@ -159,6 +159,7 @@ namespace TeatroBack.Data
                 {
                     Id = s.Id,
                     Number = s.Number,
+                    Price = s.Price,
                     State = s.State,
                     UserId = s.UserId
                 }).ToList();
@@ -206,6 +207,7 @@ namespace TeatroBack.Data
                     {
                         existingSeat.Number = updatedSeat.Number;
                         existingSeat.UserId = updatedSeat.UserId;
+                        existingSeat.Price = updatedSeat.Price;
                         existingSeat.State = updatedSeat.State;
 
                         _seatRepository.Update(existingSeat);
