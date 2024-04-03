@@ -43,6 +43,7 @@ namespace TeteObra.Controllers
                 Image = obraCreateDto.Image,
                 Duration = obraCreateDto.Duration,
                 Genre = obraCreateDto.Genre,
+                Description = obraCreateDto.Description,
             };
 
             _ObraService.Add(obra);
@@ -65,6 +66,7 @@ namespace TeteObra.Controllers
             existingObra.Image = obraDto.Image;
             existingObra.Genre = obraDto.Genre;
             existingObra.Duration = obraDto.Duration;
+            existingObra.Description = obraDto.Description;
          /*    existingObra.Sessions = obraDto.Sessions?.Select(sessionDto => new Session
             {
                 Id = sessionDto.Id,

@@ -14,6 +14,8 @@ public class Obra
         public string Duration { get; set; }
         [Required]
         public string Genre { get; set; }
+        [Required]
+        public string Description { get; set; }
         public List<Session> Sessions { get; set; }
         public Obra() {}
 

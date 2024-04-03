@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 public class ObraUpdateDto
 {
-    public int Id {get; set;}
+    public int Id { get; set; }
     [Required]
     public string Name { get; set; }
     [Required]
@@ -13,8 +13,9 @@ public class ObraUpdateDto
     public string Duration { get; set; }
     [Required]
     public string Genre { get; set; }
+    [Required]
+    public string Description { get; set; }
 
-    
     public ObraUpdateDto() { }
 
 }

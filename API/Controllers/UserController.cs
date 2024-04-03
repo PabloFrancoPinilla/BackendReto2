@@ -41,16 +41,20 @@ namespace TeteUser.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, User User)
+        public IActionResult Update(int id, User user)
         {
-            if (id != User.Id)
+            if (id != user.Id)
                 return BadRequest();
 
             var existingUser = _UserService.Get(id);
             if (existingUser == null)
                 return NotFound();
 
-            _UserService.Update(User);
+            existingUser.Name = user.Name;
+            existingUser.LastName = user.LastName;
+            existingUser.Mail = user.Mail;
+
+            _UserService.Update(existingUser);
 
             return NoContent();
         }

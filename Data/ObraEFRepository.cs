@@ -45,8 +45,8 @@ namespace TeatroBack.Data
                         Name = obraDto.Name,
                         Image = obraDto.Image,
                         Duration = obraDto.Duration,
-                        Genre = obraDto.Genre
-
+                        Genre = obraDto.Genre,
+                        Description = obraDto.Description
                     };
 
                     return obra;
@@ -72,6 +72,7 @@ namespace TeatroBack.Data
                 _obra.Image = obra.Image;
                 _obra.Duration = obra.Duration;
                 _obra.Genre = obra.Genre;
+                _obra.Description = obra.Description;
                 _context.Entry(_obra).State = EntityState.Modified;
                 SaveChanges();
             }
@@ -141,7 +142,8 @@ namespace TeatroBack.Data
                     Name = o.Name,
                     Image = o.Image,
                     Duration = o.Duration,
-                    Genre = o.Genre
+                    Genre = o.Genre,
+                    Description = o.Description
                 }).ToList();
 
                 return obraDto;

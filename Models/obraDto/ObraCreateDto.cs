@@ -12,6 +12,8 @@ public class ObraCreateDto
     public string Duration { get; set; }
     [Required]
     public string Genre { get; set; }
+    [Required]
+    public string Description { get; set; }
     public ObraCreateDto() { }
 
 }
