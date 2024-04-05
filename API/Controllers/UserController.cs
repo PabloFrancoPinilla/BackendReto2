@@ -20,10 +20,10 @@ namespace TeteUser.Controllers
 
 
         [HttpGet]
-        public ActionResult<List<User>> GetAll() => _UserService.GetAll();
+        public ActionResult<List<UserGetDto>> GetAll() => _UserService.GetAll();
 
         [HttpGet("{id}")]
-        public ActionResult<User> Get(int id)
+        public ActionResult<UserGetDto> Get(int id)
         {
             var User = _UserService.Get(id);
 
@@ -46,13 +46,14 @@ namespace TeteUser.Controllers
             if (id != user.Id)
                 return BadRequest();
 
-            var existingUser = _UserService.Get(id);
+            var existingUser = _UserService.GetForUpdate(id);
             if (existingUser == null)
                 return NotFound();
 
             existingUser.Name = user.Name;
             existingUser.LastName = user.LastName;
             existingUser.Mail = user.Mail;
+            existingUser.Password = user.Password;
 
             _UserService.Update(existingUser);
 
@@ -62,7 +63,7 @@ namespace TeteUser.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var User = _UserService.Get(id);
+            var User = _UserService.GetForUpdate(id);
 
             if (User == null)
                 return NotFound();
