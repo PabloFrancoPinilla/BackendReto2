@@ -19,10 +19,6 @@ namespace TeatroBack.Data
 
             //Aqui establecemos las relaciones (Por ejemplo en este cada  asiento tiene un usuario y un usuario puede tener muchos asientos.)
 
-            modelBuilder.Entity<Seat>()
-                .HasOne(s => s.User)
-                .WithMany()
-                .HasForeignKey(s => s.UserId);
 
             //Aqui establecemos las relaciones (Por ejemplo en este cada  sesion tiene una obra y una obra puede tener muchas sesiones.)
             modelBuilder.Entity<Session>()
@@ -42,6 +38,25 @@ namespace TeatroBack.Data
                .WithMany(s => s.Seats)
                .HasForeignKey(s => s.SalaId)
                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<Reserve>()
+            .HasOne(r => r.Seat)
+            .WithMany()
+            .HasForeignKey(r => r.SeatId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            // Relación Reserva - Session
+            modelBuilder.Entity<Reserve>()
+                .HasOne(r => r.Session)
+                .WithMany()
+                .HasForeignKey(r => r.SessionId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Relación Reserva - User
+            modelBuilder.Entity<Reserve>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Obra>().HasData(
                 new Obra { Id = 1, Name = "El misterio del faro", Image = "faro.jpg", Duration = "2 horas", Genre = "Misterio", Description = "Hehequeloco" },
                 new Obra { Id = 2, Name = "La princesa perdida", Image = "princesa.jpg", Duration = "1 hora y 30 minutos", Genre = "Fantasía", Description = "Hehequeloco" },
@@ -83,6 +98,7 @@ namespace TeatroBack.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Session> Sessions { get; set; }
         public DbSet<Sala> Salas { get; set; }
+        public DbSet<Reserve> Reserves { get; set; }
 
 
     }

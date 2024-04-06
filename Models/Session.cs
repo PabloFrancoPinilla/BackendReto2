@@ -14,7 +14,7 @@ public class Session
 
     public int SalaId { get; set; }
     public Sala Sala { get; set; }
-
+    
     //Esto se lo he puesto de momento por si acaso para en vue por si tenemos que usarlo
     
     public Session() { }

@@ -13,7 +13,6 @@ public class SeatUpdateDto
 
     public double Price { get; set; }
     public string State { get; set; }
-    public int? UserId { get; set; }
     public int SalaId { get; set; }
     public SeatUpdateDto() { }
 

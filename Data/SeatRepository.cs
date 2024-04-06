@@ -46,7 +46,7 @@ namespace TeatroBack.Data
                     {
                         Id = seatDto.Id,
                         Number = seatDto.Number,
-                        UserId = seatDto.UserId,
+                       
                         Price = seatDto.Price,
                         State = seatDto.State,
 
@@ -73,7 +73,7 @@ namespace TeatroBack.Data
                 _seat.Number = Seat.Number;
                 _seat.Price = Seat.Price;
                 _seat.State = Seat.State;
-                _seat.UserId = Seat.UserId;
+                
                 _context.Entry(_seat).State = EntityState.Modified;
                 SaveChanges();
             }
@@ -103,18 +103,7 @@ namespace TeatroBack.Data
             }
         }
 
-        public List<Seat> GetSeatsByUserId(int userId)
-        {
-            try
-            {
-                return _context.Seats.Where(s => s.UserId == userId).ToList();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
-                throw;
-            }
-        }
+       
         public List<SeatDto> GetSeatsBySalaId(int salaId)
         {
 
@@ -127,7 +116,7 @@ namespace TeatroBack.Data
                     Number = s.Number,
                     Price = s.Price,
                     State = s.State,
-                    UserId = s.UserId
+                  
                 })
                 .ToList();
                 return seats;
@@ -149,7 +138,6 @@ namespace TeatroBack.Data
             try
             {
                 var seat = _context.Seats
-                    .Include(s => s.User)
                     .ToList();
 
                 var seatDto = seat.Select(s => new SeatDto
@@ -157,10 +145,7 @@ namespace TeatroBack.Data
                     Id = s.Id,
                     Price = s.Price,
                     State = s.State,
-                    Number = s.Number,
-                    UserId = s.UserId,
-
-
+                    Number = s.Number, 
                 }).ToList();
 
                 return seatDto;

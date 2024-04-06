@@ -44,7 +44,7 @@ namespace TeteSeat.Controllers
                 Number = SeatCreateDto.Number,
                 SalaId = SeatCreateDto.SalaId,
                 Price = SeatCreateDto.Price,
-                UserId = SeatCreateDto.UserId,
+             
                 State = SeatCreateDto.State
             };
             _SeatService.Add(Seat);
@@ -65,7 +65,7 @@ namespace TeteSeat.Controllers
             existingSeat.Number = Seat.Number;
             existingSeat.Price = Seat.Price;
             existingSeat.State = Seat.State;
-            existingSeat.UserId = Seat.UserId;
+         
 
             _SeatService.Update(existingSeat);
 

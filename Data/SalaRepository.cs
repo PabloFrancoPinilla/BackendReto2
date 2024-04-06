@@ -54,9 +54,8 @@ namespace TeatroBack.Data
                         {
                             Id = seat.Id,
                             Number = seat.Number,
-                            UserId = seat.UserId,
                             State = seat.State,
-                           
+
                         }).ToList()
                     };
                     return sala;
@@ -88,7 +87,7 @@ namespace TeatroBack.Data
                     {
                         Id = seatDto.Id,
                         Number = seatDto.Number,
-                        UserId = seatDto.UserId,
+
                         State = seatDto.State,
                     }).ToList();
 
@@ -133,7 +132,7 @@ namespace TeatroBack.Data
                     Id = s.Id,
                     Number = s.Number,
                     State = s.State,
-                    UserId = s.UserId
+
                 })
                 .ToList();
                 return seats;
@@ -167,9 +166,9 @@ namespace TeatroBack.Data
                     {
                         Id = seat.Id,
                         Number = seat.Number,
-                        UserId = seat.UserId,
+
                         State = seat.State,
-                        
+
                     }).ToList()
                 }).ToList();
 

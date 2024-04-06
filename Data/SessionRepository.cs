@@ -161,7 +161,7 @@ namespace TeatroBack.Data
                     Number = s.Number,
                     Price = s.Price,
                     State = s.State,
-                    UserId = s.UserId
+                  
                 }).ToList();
                 return seats;
 
@@ -206,7 +206,7 @@ namespace TeatroBack.Data
                     if (existingSeat != null)
                     {
                         existingSeat.Number = updatedSeat.Number;
-                        existingSeat.UserId = updatedSeat.UserId;
+                      
                         existingSeat.Price = updatedSeat.Price;
                         existingSeat.State = updatedSeat.State;
 

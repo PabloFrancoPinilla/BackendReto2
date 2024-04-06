@@ -72,12 +72,6 @@ namespace TeteUser.Controllers
 
             return NoContent();
         }
-        [HttpGet("{userId}/seats")]
-        public IActionResult GetSeatsByUserId(int userId)
-        {
-            var seats = _SeatService.GetSeatsByUserId(userId);
-            return Ok(seats);
-        }
 
 
     }

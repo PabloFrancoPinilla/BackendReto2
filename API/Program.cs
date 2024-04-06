@@ -32,6 +32,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ISeatService, SeatService>();
 builder.Services.AddScoped<ISessionService, SessionService>();
 builder.Services.AddScoped<ISalaService, SalaService>();
+builder.Services.AddScoped<IReserveService, ReserveService>();
 
 // Register database context
 builder.Services.AddDbContext<ObraContext>(options =>
@@ -43,6 +44,7 @@ builder.Services.AddScoped<IUserRepository, UserEFRepository>();
 builder.Services.AddScoped<ISeatRepository, SeatRepository>();
 builder.Services.AddScoped<ISessionRepository, SessionRepository>();
 builder.Services.AddScoped<ISalaRepository, SalaRepository>();
+builder.Services.AddScoped<IReserveRepository, ReserveRepository>();
 
 
 // Register services

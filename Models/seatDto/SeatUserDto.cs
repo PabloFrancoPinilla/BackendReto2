@@ -2,7 +2,7 @@ namespace TeatroBack.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Seat
+public class SeatUserDto
 {
 
     [Key]
@@ -12,11 +12,8 @@ public class Seat
     [Required]
 
     public double Price { get; set; }
-
     public string State { get; set; }
-    //Clave Foranea Session
-    public int SalaId { get; set; }
-    public Sala Sala { get; set; }
-    public Seat() { }
+    public SessionDto Session{get;set;}
+    public SeatUserDto() { }
 
 }
