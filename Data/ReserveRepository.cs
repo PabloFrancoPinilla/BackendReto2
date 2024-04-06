@@ -129,6 +129,55 @@ namespace TeatroBack.Data
             }
 
         }
+         public List<ReserveDto> GetReserveBySessionId(int SessionId)
+        {
+            try
+            {
+                var reserves = _context.Reserves
+                .Include(r => r.Seat)
+                .Include(s => s.Session)
+                .ThenInclude(s => s.Sala)
+                .Include(o=>o.Session.Obra)
+                .Include(u => u.User)
+                .Where(r => r.SessionId == SessionId)
+                .ToList();
+                var reservesDto = reserves.Select(r => new ReserveDto
+                {
+                    Id = r.Id,
+                    User= r.User,
+                    Seat = new SeatDto{
+                        Id = r.Seat.Id,
+                        Number = r.Seat.Number,
+                        State= r.Seat.State,
+                        Price= r.Seat.Price
+                    },
+                    Session = new SessionDto
+                    {
+                        Id = r.Session.Id,
+                        Obra = new ObraDto
+                        {
+                            Id = r.Session.Obra.Id,
+                            Name = r.Session.Obra.Name,
+                            Image = r.Session.Obra.Image,
+                            Duration = r.Session.Obra.Duration,
+                            Genre = r.Session.Obra.Genre,
+                            Description = r.Session.Obra.Description
+                        }, 
+                        Date = r.Session.Date, 
+                        SalaNumber = r.Session.Sala.Number
+                    },
+                   
+                }).ToList();
+                return reservesDto;
+
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                throw;
+            }
+
+        }
 
         public List<Reserve> GetAll()
         {

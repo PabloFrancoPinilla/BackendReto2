@@ -22,6 +22,8 @@ public class ReserveService : IReserveService
     public void Delete(int id) => _ReserveRepository.Delete(id);
     public List<SeatUserDto> GetSeatsByUserId(int userId) => _ReserveRepository.GetSeatsByUserId(userId);
 
+    public List<ReserveDto> GetReserveBySessionId(int SessionId) => _ReserveRepository.GetReserveBySessionId(SessionId);
+
     
 
 

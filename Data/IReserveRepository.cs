@@ -9,5 +9,6 @@ public interface IReserveRepository
     void Delete(int id);
 
     List<SeatUserDto> GetSeatsByUserId(int userId);
+     List<ReserveDto> GetReserveBySessionId(int SessionId);
 
 }

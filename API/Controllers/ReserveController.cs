@@ -85,5 +85,6 @@ namespace TeatroBack.Controllers
             var seats = _reserveService.GetSeatsByUserId(userId);
             return Ok(seats);
         }
+      
     }
 }

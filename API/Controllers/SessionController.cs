@@ -10,11 +10,13 @@ namespace TeteSession.Controllers
     {
         private readonly ISessionService _SessionService;
         private readonly ISeatService _SeatsService;
+        private readonly IReserveService _reserveService;
 
-        public SessionController(ISessionService SessionService, ISeatService SeatsService)
+        public SessionController(ISessionService SessionService, ISeatService SeatsService, IReserveService ReserveService)
         {
             _SessionService = SessionService;
             _SeatsService = SeatsService;
+            _reserveService = ReserveService;
         }
 
         [HttpGet]
@@ -100,6 +102,12 @@ namespace TeteSession.Controllers
                 return NotFound(e);
             }
             
+        }
+          [HttpGet("{sessionId}/reserves")]
+        public IActionResult GetReserveBySessionID(int sessionId)
+        {
+            var seats = _reserveService.GetReserveBySessionId(sessionId);
+            return Ok(seats);
         }
 
         /* [HttpGet("{salaId}/seatsById")]
