@@ -13,16 +13,16 @@ namespace TeatroBack.Data
         private readonly ILogger<SessionRepository> _logger;
         private readonly ISeatRepository _seatRepository;
         private readonly ISalaRepository _salaRepository;
-       
 
-        public SessionRepository(ObraContext context, ILogger<SessionRepository> logger, ISeatRepository seatRepository, ISalaRepository salaRepository )
+
+        public SessionRepository(ObraContext context, ILogger<SessionRepository> logger, ISeatRepository seatRepository, ISalaRepository salaRepository)
         {
             _context = context;
             _logger = logger;
-            _seatRepository= seatRepository;
+            _seatRepository = seatRepository;
             _salaRepository = salaRepository;
 
-            
+
         }
 
         public void Add(Session Session)
@@ -149,30 +149,30 @@ namespace TeatroBack.Data
                 throw;
             }
         }
-
         public List<SeatSalaDto> GetSeatsBySessionId(int sessionId)
         {
             try
             {
-                var seats = _context.Seats.Where(s => s.Sala.SessionId == sessionId)
-                .Select(s => new SeatSalaDto
-                {
-                    Id = s.Id,
-                    Number = s.Number,
-                    Price = s.Price,
-                    State = s.State,
-                  
-                }).ToList();
+                var seats = _context.Seats
+                    .Where(s => s.Sala.Sessions.Any(session => session.Id == sessionId))
+                    .Select(s => new SeatSalaDto
+                    {
+                        Id = s.Id,  
+                        Number = s.Number,
+                        Price = s.Price,
+                        State = s.State,
+                    })
+                    .ToList();
+
                 return seats;
-
-
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                _logger.LogError(e, "An error occurred in the GetSeatsBySessionId method");
                 throw;
             }
         }
+
         public SessionRepository(ObraContext context)
         {
             _context = context;
@@ -196,9 +196,9 @@ namespace TeatroBack.Data
                 {
                     throw new ArgumentException("Sala no encontrada.");
                 }
-         
+
                 var seatsInSala = _seatRepository.GetSeatsBySalaId(session.SalaId);
-           
+
                 foreach (var updatedSeat in updatedSeats)
                 {
                     var existingSeat = seatsInSala.FirstOrDefault(s => s.Id == updatedSeat.Id);
@@ -206,7 +206,7 @@ namespace TeatroBack.Data
                     if (existingSeat != null)
                     {
                         existingSeat.Number = updatedSeat.Number;
-                      
+
                         existingSeat.Price = updatedSeat.Price;
                         existingSeat.State = updatedSeat.State;
 
@@ -214,8 +214,8 @@ namespace TeatroBack.Data
                     }
                 }
 
-              
-                    SaveChanges();
+
+                SaveChanges();
             }
             catch (Exception ex)
             {

@@ -99,6 +99,7 @@ namespace TeatroBack.Data
                 .ToList();
                 var seatUserDtos = reserves.Select(r => new SeatUserDto
                 {
+                    reserveId = r.Id,
                     Id = r.Seat.Id, 
                     Number = r.Seat.Number, 
                     State = r.Seat.State,

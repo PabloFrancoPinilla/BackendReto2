@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeatroBack.Data;
 
@@ -11,9 +12,11 @@ using TeatroBack.Data;
 namespace TeatroBack.Data.Migrations
 {
     [DbContext(typeof(ObraContext))]
-    partial class ObraContextModelSnapshot : ModelSnapshot
+    [Migration("20240406201759_xddddddddddd")]
+    partial class xddddddddddd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -661,70 +664,70 @@ namespace TeatroBack.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 1,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 2,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 3,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 4,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 5,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 6,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 7,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 7,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 8,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 8,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 9,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 9,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 10,
-                            Date = new DateTime(2024, 4, 14, 0, 15, 50, 454, DateTimeKind.Local).AddTicks(891),
+                            Date = new DateTime(2024, 4, 13, 22, 17, 59, 383, DateTimeKind.Local).AddTicks(8192),
                             ObraId = 10,
                             SalaId = 1
                         });

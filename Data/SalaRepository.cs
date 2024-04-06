@@ -25,12 +25,11 @@ namespace TeatroBack.Data
             try
             {
                 _context.Salas.Add(sala);
-                Log.Information("sala added");
                 SaveChanges();
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                _logger.LogError(e, "An error occurred in the Add method");
                 throw;
             }
         }
@@ -39,26 +38,30 @@ namespace TeatroBack.Data
         {
             try
             {
-                var salaDto = _context.Salas.Include(s => s.Seats)
-                .FirstOrDefault(p => p.Id == salaId);
+                var sala = _context.Salas
+                    .Include(s => s.Sessions)
+                    .Include(s => s.Seats)
+                    .FirstOrDefault(p => p.Id == salaId);
 
-
-                if (salaDto != null)
+                if (sala != null)
                 {
-                    var sala = new SalaDto
+                    var salaDto = new SalaDto
                     {
-                        Id = salaDto.Id,
-                        Number = salaDto.Number,
-                        SessionId = salaDto.SessionId,
-                        Seats = salaDto.Seats.Select(seat => new SeatDto
+                        Id = sala.Id,
+                        Number = sala.Number,
+                        Sessions = sala.Sessions.Select(session => new SessionRDto
+                        {
+                            Id = session.Id,
+                            // Map other properties as needed
+                        }).ToList(),
+                        Seats = sala.Seats.Select(seat => new SeatDto
                         {
                             Id = seat.Id,
                             Number = seat.Number,
                             State = seat.State,
-
                         }).ToList()
                     };
-                    return sala;
+                    return salaDto;
                 }
                 else
                 {
@@ -67,7 +70,50 @@ namespace TeatroBack.Data
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
+                _logger.LogError(e, "An error occurred in the Get method");
+                throw;
+            }
+        }
+
+        // Update method already provided in the previous response
+
+        public void Delete(int salaId)
+        {
+            try
+            {
+                var sala = _context.Salas.Find(salaId);
+                if (sala == null)
+                {
+                    throw new KeyNotFoundException("Sala not found.");
+                }
+                _context.Salas.Remove(sala);
+                SaveChanges();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error occurred in the Delete method");
+                throw;
+            }
+        }
+
+        public List<SeatSalaDto> GetSeatsBySalaId(int salaId)
+        {
+            try
+            {
+                var seats = _context.Seats
+                    .Where(s => s.SalaId == salaId)
+                    .Select(s => new SeatSalaDto
+                    {
+                        Id = s.Id,
+                        Number = s.Number,
+                        State = s.State,
+                    })
+                    .ToList();
+                return seats;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "An error occurred in the GetSeatsBySalaId method");
                 throw;
             }
         }
@@ -80,14 +126,18 @@ namespace TeatroBack.Data
                 if (existingSala != null)
                 {
                     existingSala.Number = salaDto.Number;
-                    existingSala.SessionId = salaDto.SessionId;
 
-                    // Actualiza las plazas solo si es necesario
+                    // Update sessions
+                    existingSala.Sessions = salaDto.Sessions.Select(sessionDto => new Session
+                    {
+                        Id = sessionDto.Id,
+                    }).ToList();
+
+                    // Update seats
                     existingSala.Seats = salaDto.Seats.Select(seatDto => new Seat
                     {
                         Id = seatDto.Id,
                         Number = seatDto.Number,
-
                         State = seatDto.State,
                     }).ToList();
 
@@ -97,52 +147,12 @@ namespace TeatroBack.Data
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Ocurrió un error en el método Update");
+                _logger.LogError(e, "An error occurred in the Update method");
                 throw;
             }
         }
 
-        public void Delete(int salaId)
-        {
-            try
-            {
-                var sala = _context.Salas.Find(salaId);
-                if (sala == null)
-                {
-                    throw new KeyNotFoundException("sala not found.");
-                }
-                _context.Salas.Remove(sala);
-                SaveChanges();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
-                throw;
-            }
-        }
 
-        public List<SeatSalaDto> GetSeatsBySalaId(int salaId)
-        {
-
-            try
-            {
-                var seats = _context.Seats.Where(s => s.SalaId == salaId)
-                .Select(s => new SeatSalaDto
-                {
-                    Id = s.Id,
-                    Number = s.Number,
-                    State = s.State,
-
-                })
-                .ToList();
-                return seats;
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, "Ocurrió un error en SomeMethod");
-                throw;
-            }
-        }
 
         public void SaveChanges()
         {
@@ -154,6 +164,7 @@ namespace TeatroBack.Data
             try
             {
                 var salas = _context.Salas
+                    .Include(s => s.Sessions)
                     .Include(s => s.Seats)
                     .ToList();
 
@@ -161,14 +172,16 @@ namespace TeatroBack.Data
                 {
                     Id = s.Id,
                     Number = s.Number,
-                    SessionId = s.SessionId,
+                    Sessions = s.Sessions.Select(session => new SessionRDto
+                    {
+                        Id = session.Id,
+                        // Map other properties as needed
+                    }).ToList(),
                     Seats = s.Seats.Select(seat => new SeatDto
                     {
                         Id = seat.Id,
                         Number = seat.Number,
-
                         State = seat.State,
-
                     }).ToList()
                 }).ToList();
 
@@ -176,10 +189,9 @@ namespace TeatroBack.Data
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "Ocurrió un error en GetAll");
+                _logger.LogError(e, "An error occurred in the GetAll method");
                 throw;
             }
         }
-
     }
 }
