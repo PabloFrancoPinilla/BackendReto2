@@ -73,6 +73,16 @@ namespace TeteUser.Controllers
             return NoContent();
         }
 
+        [HttpGet("{Mail}/id")]
+        public ActionResult<UserIdDto> GetUserByMail(string Mail)
+        {
+            var User = _UserService.GetUserByMail(Mail);
+
+            if (User == null)
+                return NotFound("hehe que loco");
+
+            return Ok(User);
+        }
 
     }
 }

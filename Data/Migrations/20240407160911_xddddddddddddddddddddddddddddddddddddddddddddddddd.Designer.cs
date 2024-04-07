@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeatroBack.Data;
 
@@ -11,9 +12,11 @@ using TeatroBack.Data;
 namespace TeatroBack.Data.Migrations
 {
     [DbContext(typeof(ObraContext))]
-    partial class ObraContextModelSnapshot : ModelSnapshot
+    [Migration("20240407160911_xddddddddddddddddddddddddddddddddddddddddddddddddd")]
+    partial class xddddddddddddddddddddddddddddddddddddddddddddddddd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,110 +61,92 @@ namespace TeatroBack.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Un grupo de amigos se adentra en un faro abandonado en busca de respuestas, pero pronto descubren que no están solos y que el faro guarda oscuros secretos.",
+                            Description = "Hehequeloco",
                             Duration = "2 horas",
                             Genre = "Misterio",
-                            Image = "https://www.taquilla.com/data/images/t/8e/laponia.jpg",
+                            Image = "faro.jpg",
                             Name = "El misterio del faro"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Después de un naufragio, un grupo de supervivientes llega a una isla aparentemente desierta. Sin embargo, pronto se dan cuenta de que no están solos y que la isla esconde misterios que desafían la lógica.",
-                            Duration = "2 horas",
-                            Genre = "Misterio",
-                            Image = "https://www.taquilla.com/data/images/t/3d/la-funcion-que-sale-mal.jpg",
-                            Name = "La isla misteriosa"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "En un circo itinerante, los artistas guardan secretos tan intrigantes como sus actuaciones. Cuando un visitante curioso se adentra en su mundo, descubre un misterio que lo cambiará todo.",
-                            Duration = "1 hora y 45 minutos",
-                            Genre = "Misterio",
-                            Image = "https://www.taquilla.com/data/images/t/de/adictos-con-lola-herrera.jpg",
-                            Name = "El circo de los sueños"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "En un reino lejano, una princesa desaparece misteriosamente. Un joven aventurero emprende un viaje para encontrarla, enfrentándose a criaturas mágicas y desafíos inimaginables en el camino.",
+                            Description = "Hehequeloco",
                             Duration = "1 hora y 30 minutos",
                             Genre = "Fantasía",
-                            Image = "https://www.atrapalo.com/common/photo/event/4/8/9/6736/1487635/si_372_0.jpg",
+                            Image = "princesa.jpg",
                             Name = "La princesa perdida"
                         },
                         new
                         {
-                            Id = 5,
-                            Description = "En un mundo donde los sueños se hacen realidad, un héroe improbable debe enfrentarse a sus mayores miedos y descubrir su verdadero destino para salvar a su reino de la oscuridad.",
-                            Duration = "2 horas y 15 minutos",
-                            Genre = "Fantasía",
-                            Image = "https://d2cyzdatssrhg7.cloudfront.net/export/sites/default/ets/.content/products/img/00-00088m2.jpg?__locale=es",
-                            Name = "El reino de los sueños"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Un joven aprendiz de mago se embarca en un viaje épico para dominar sus poderes y enfrentarse al malvado hechicero que amenaza con destruir su mundo.",
-                            Duration = "2 horas y 30 minutos",
-                            Genre = "Fantasía",
-                            Image = "https://teatromadrid.com/wp-content/uploads/2022/09/Teatro-Madrid_WAH_MADRID_cartel.jpg",
-                            Name = "El viaje del mago"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "En una isla remota, un grupo de cazatesoros busca la legendaria fortuna de un infame pirata. Pero no tardan en descubrir que la isla está llena de trampas mortales y rivalidades peligrosas.",
+                            Id = 3,
+                            Description = "Hehequeloco",
                             Duration = "2 horas y 15 minutos",
                             Genre = "Aventura",
-                            Image = "https://www.taquilla.com/data/images/t/78/nada-es-imposible-el-mago-pop.jpg",
+                            Image = "pirata.jpg",
                             Name = "El tesoro del pirata"
                         },
                         new
                         {
-                            Id = 8,
-                            Description = "Un intrépido explorador emprende una expedición peligrosa en busca de la legendaria estatua de un coloso perdido. Pero pronto descubre que no es el único que busca el tesoro, y que sus rivales están dispuestos a todo por encontrarlo primero.",
-                            Duration = "2 horas y 30 minutos",
-                            Genre = "Aventura",
-                            Image = "https://teatrosluchana.es/wp-content/uploads/doble-o-nada-cartel.jpg",
-                            Name = "La búsqueda del coloso"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "En lo profundo de la selva amazónica, un grupo de científicos tropieza con un antiguo misterio que podría cambiar nuestra comprensión de la historia. Pero también despiertan a una antigua fuerza que hará todo lo posible por mantener su secreto oculto.",
-                            Duration = "2 horas",
-                            Genre = "Aventura",
-                            Image = "https://d2cyzdatssrhg7.cloudfront.net/export/sites/default/ets/.content/products/img/00-00085ZV.jpg?__locale=es",
-                            Name = "El enigma de la jungla"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "Un grupo de desconocidos recibe una invitación misteriosa para pasar la noche en una mansión aparentemente abandonada. Pronto descubren que no están solos y que alguien o algo los observa desde las sombras.",
+                            Id = 4,
+                            Description = "Hehequeloco",
                             Duration = "2 horas",
                             Genre = "Suspenso",
-                            Image = "https://phantom-elmundo.unidadeditorial.es/eb6270f63ddf70149dde1fe54e34f364/resize/414/f/jpg/assets/multimedia/imagenes/2021/07/28/16274647454501.jpg",
+                            Image = "mansión.jpg",
                             Name = "La mansión encantada"
                         },
                         new
                         {
-                            Id = 11,
-                            Description = "En un pequeño pueblo, una casa aparentemente común esconde secretos inquietantes que han atormentado a sus habitantes durante generaciones. Cuando una familia decide mudarse allí, desatan fuerzas oscuras que amenazan con destruirlos.",
-                            Duration = "2 horas",
-                            Genre = "Suspenso",
-                            Image = "https://ecientradaspropublicsa.blob.core.windows.net/edo-entradas-files/content_images/attachments/000/050/925/original/bisabis-morancos-400-504.jpg?2024",
-                            Name = "La casa de los secretos"
+                            Id = 5,
+                            Description = "Hehequeloco",
+                            Duration = "1 hora y 45 minutos",
+                            Genre = "Drama",
+                            Image = "circo.jpg",
+                            Name = "El circo de los sueños"
                         },
                         new
                         {
-                            Id = 12,
-                            Description = "En lo alto de una colina solitaria, una comunidad aparentemente pacífica oculta secretos que podrían destruirlos a todos. Cuando un extraño llega al pueblo, desencadena una serie de eventos que revelan la verdadera naturaleza del lugar.",
-                            Duration = "1 hora y 45 minutos",
+                            Id = 6,
+                            Description = "Hehequeloco",
+                            Duration = "2 horas y 30 minutos",
+                            Genre = "Aventura",
+                            Image = "montaña.jpg",
+                            Name = "El secreto de la montaña"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Hehequeloco",
+                            Duration = "2 horas",
+                            Genre = "Misterio",
+                            Image = "isla.jpg",
+                            Name = "La isla misteriosa"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Hehequeloco",
+                            Duration = "1 hora y 30 minutos",
+                            Genre = "Romance",
+                            Image = "principe.jpg",
+                            Name = "El príncipe y la doncella"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Hehequeloco",
+                            Duration = "2 horas y 15 minutos",
+                            Genre = "Fantasía",
+                            Image = "caballero.jpg",
+                            Name = "La leyenda del caballero"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "Hehequeloco",
+                            Duration = "2 horas",
                             Genre = "Suspenso",
-                            Image = "https://phantom-elmundo.unidadeditorial.es/8f588dda47ba80862ca7090407d303e1/resize/414/f/jpg/assets/multimedia/imagenes/2021/07/28/16274647441407.jpg",
-                            Name = "El secreto de la colina"
+                            Image = "casa.jpg",
+                            Name = "La casa de los secretos"
                         });
                 });
 
@@ -679,70 +664,70 @@ namespace TeatroBack.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 1,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 2,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 3,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 4,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 5,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 5,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 6,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 6,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 7,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 7,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 8,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 8,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 9,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 9,
                             SalaId = 1
                         },
                         new
                         {
                             Id = 10,
-                            Date = new DateTime(2024, 4, 14, 23, 2, 41, 526, DateTimeKind.Local).AddTicks(4190),
+                            Date = new DateTime(2024, 4, 14, 18, 9, 11, 642, DateTimeKind.Local).AddTicks(7078),
                             ObraId = 10,
                             SalaId = 1
                         });
@@ -775,24 +760,6 @@ namespace TeatroBack.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = -1,
-                            LastName = "admin",
-                            Mail = "admin",
-                            Name = "admin",
-                            Password = "admin"
-                        },
-                        new
-                        {
-                            Id = 1,
-                            LastName = "noregister",
-                            Mail = "noregister",
-                            Name = "noregister",
-                            Password = "noregister"
-                        });
                 });
 
             modelBuilder.Entity("TeatroBack.Models.Reserve", b =>

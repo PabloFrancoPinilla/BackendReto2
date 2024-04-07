@@ -25,6 +25,8 @@ public class UserService : IUserService
 
     public User GetForUpdate(int userId) => _UserRepository.GetForUpdate(userId);
 
+    public UserIdDto GetUserByMail(string Mail) => _UserRepository.GetUserByMail(Mail);
+
 }
 
 

@@ -11,4 +11,6 @@ public interface IUserService
     void Delete(int id);
     string Login(string Mail, string Password);
     public User GetForUpdate(int userId);
+
+    public UserIdDto GetUserByMail(string Mail);
 }

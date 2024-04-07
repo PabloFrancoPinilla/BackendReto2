@@ -114,5 +114,18 @@ namespace TeatroBack.Data
 
             return users;
         }
+        public UserIdDto GetUserByMail(string Mail)
+        {
+            var user = _context.Users.FirstOrDefault(p => p.Mail == Mail);
+            if (user != null)
+            {
+                var userId = new UserIdDto
+                {
+                    Id = user.Id,
+                };
+                return userId;
+            }
+            return null;
+        }
     }
 }
