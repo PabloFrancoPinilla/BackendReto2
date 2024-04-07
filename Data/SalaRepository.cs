@@ -175,7 +175,6 @@ namespace TeatroBack.Data
                     Sessions = s.Sessions.Select(session => new SessionRDto
                     {
                         Id = session.Id,
-                        // Map other properties as needed
                     }).ToList(),
                     Seats = s.Seats.Select(seat => new SeatDto
                     {
