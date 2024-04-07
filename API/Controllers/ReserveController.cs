@@ -33,20 +33,23 @@ namespace TeatroBack.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] ReserveCreateDto reserveCreateDto)
         {
-            if (reserveCreateDto == null)
+            if (reserveCreateDto == null || reserveCreateDto.SeatIds == null || reserveCreateDto.SeatIds.Count == 0)
             {
-                return BadRequest();
+                return BadRequest("La lista de identificadores de asientos está vacía.");
             }
 
-            var reserve = new Reserve
+            foreach (var seatId in reserveCreateDto.SeatIds)
             {
-                SeatId = reserveCreateDto.SeatId,
-                SessionId = reserveCreateDto.SessionId,
-                UserId = reserveCreateDto.UserId
-            };
-
-            _reserveService.Add(reserve);
-            return CreatedAtAction(nameof(Get), new { id = reserve.Id }, reserve);
+                var reserve = new Reserve
+                {
+                    SeatId = seatId,
+                    SessionId = reserveCreateDto.SessionId,
+                    UserId = reserveCreateDto.UserId
+                };
+                _reserveService.Add(reserve);
+            }
+            
+            return Ok("Reservas creadas exitosamente.");
         }
 
         [HttpPut("{id}")]
@@ -85,6 +88,6 @@ namespace TeatroBack.Controllers
             var seats = _reserveService.GetSeatsByUserId(userId);
             return Ok(seats);
         }
-      
+
     }
 }

@@ -7,7 +7,7 @@ public class ReserveCreateDto
 
     [Key]
     public int Id { get; set; }
-    public int SeatId { get; set; }
+    public List<int> SeatIds { get; set; }
   
 
     public int SessionId { get; set; }
